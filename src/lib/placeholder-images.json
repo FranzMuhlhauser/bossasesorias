@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-home",
+      "description": "Profesionales colaborando en un proyecto de arquitectura",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxidXNpbmVzcyUyMG1lZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NjUwMjA1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professionals collaborating project"
+    },
+    {
+      "id": "why-boss",
+      "description": "Manos de empresarios unidas simbolizando trabajo en equipo",
+      "imageUrl": "/images/manos-de-negocios-unieron-trabajo-en-equipo.webp",
+      "imageHint": "teamwork hands"
+    },
+    {
+      "id": "dimension-wellbeing",
+      "description": "Trabajador con equipo de protección en planta industrial",
+      "imageUrl": "https://images.unsplash.com/photo-1763684041948-f254c06b1a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29ya2VyJTIwc2FmZXR5JTIwaW5kdXN0cmlhbHxlbnwwfHx8fDE3NjQ5NDg1NjN8MA&ixlib_rb-4.1.0&q=80&w=1080",
+      "imageHint": "worker industrial plant"
+    },
+    {
+      "id": "dimension-legal",
+      "description": "Documentos laborales y contrato sobre escritorio",
+      "imageUrl": "https://images.unsplash.com/photo-1687289133469-b2a07a13b78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNXx8YWJvZ2Fkb3N8ZW58MHx8fHwxNzY1MDM1ODM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "legal documents desk"
+    },
+    {
+      "id": "dimension-tech",
+      "description": "Técnico trabajando en computador con interfaz digital",
+      "imageUrl": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMXx8dGVjbm9sb2d5fGVufDB8fHx8MTc2NDk0OTk1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technician computer interface"
+    },
+    {
+      "id": "courses-training",
+      "description": "Grupo de trabajadores en capacitación de seguridad laboral",
+      "imageUrl": "https://images.unsplash.com/photo-1628147529780-36964fbb8d54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0cmFpbmluZyUyMHNhZmV0eSUyMHdvcmtzaG9wfGVufDB8fHx8MTc2NDk0ODU2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workers safety training"
+    },
+    {
+      "id": "news-1",
+      "description": "Equipo moderno trabajando eficientemente, representando la reducción de jornada a 42 horas en 2026.",
+      "imageUrl": "/images/news-40-hrs.png",
+      "imageHint": "office team 40 hours"
+    },
+    {
+      "id": "news-2",
+      "description": "Ambiente laboral de apoyo y respetuoso, simbolizando la prevención bajo la Ley Karin.",
+      "imageUrl": "/images/news-ley-karin.png",
+      "imageHint": "well-being supportive workplace"
+    },
+    {
+      "id": "news-3",
+      "description": "Escudo de ciberseguridad y flujos de datos digitales, representando la nueva Ley Marco de Ciberseguridad.",
+      "imageUrl": "/images/news-ciberseguridad.png",
+      "imageHint": "cybersecurity infrastructure"
+    },
+    {
+      "id": "news-4",
+      "description": "Profesional utilizando interfaces de IA, simbolizando la integración ética de la IA en la cultura organizacional.",
+      "imageUrl": "/images/news-ia-cultura.png",
+      "imageHint": "ai culture ethics"
+    },
+    {
+      "id": "contact-hero",
+      "description": "Teléfono vintage junto a una libreta de contactos.",
+      "imageUrl": "https://images.unsplash.com/photo-1474403078171-7f199e9d1335?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8Y29udGFjdG98ZW58MHx8fHwxNzY1MDQwMTY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "contact us"
+    }
+  ]
+}

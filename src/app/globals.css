@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #ffffff - Blanco */
+    --foreground: 222 84% 4%; /* #010816 - Gris oscuro #333333 (ajustado) */
+    --card: 240 5% 100%;
+    --card-foreground: 222 84% 4%;
+    --popover: 240 5% 100%;
+    --popover-foreground: 222 84% 4%;
+    --primary: 212 56% 28%; /* #1A2E40 - Azul profundo */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 215 28% 66%; /* #9eacbe - Gris medio #A3A3A3 (ajustado) */
+    --secondary-foreground: 212 56% 28%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 25 100% 50%; /* #FF6B00 - Naranja */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%; /* Gris claro para bordes */
+    --input: 240 6% 90%;
+    --ring: 25 100% 50%;
+    --radius: 0.5rem; /* 8px */
+  }
+
+  .dark {
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 84% 4%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 25 100% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 25 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  .text-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+  }
+}

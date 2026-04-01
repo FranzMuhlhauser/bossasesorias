@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOSS Asesorías | Soluciones Integrales para Empresas en Chile</title>
+  <meta name="description" content="Transforma tu empresa con asesoría experta en bienestar laboral, gestión legal y tecnología. Solicita una asesoría estratégica y potencia tu crecimiento en Chile." />
+  <meta name="keywords" content="bienestar laboral chile, asesorías empresariales integrales, prevención de riesgos chile, soluciones tecnológicas empresas, gestión legal y administrativa, consultora empresarial chile" />
+  <meta property="og:title" content="BOSS Asesorías | Bienestar Laboral, Gestión Legal y Soluciones Tecnológicas" />
+  <meta property="og:description" content="Soluciones integrales que protegen a tu equipo, optimizan tus procesos y fortalecen tu organización." />
+  <meta property="og:site_name" content="BOSS ASESORÍAS" />
+  <meta property="og:locale" content="es_CL" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BOSS Asesorías",
+    "url": "https://www.bossasesorias.cl",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+56-9-9289-5726",
+      "contactType": "customer service",
+      "areaServed": "CL",
+      "availableLanguage": "Spanish"
+    },
+    "sameAs": [
+      "https://www.facebook.com/BossAsesorias",
+      "https://www.instagram.com/boss_asesorias/",
+      "https://www.linkedin.com/in/boss-asesorias-8b9786118/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿En qué consiste la asesoría estratégica inicial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es una evaluación profunda donde nuestros expertos analizan el estado actual de tu empresa en seguridad, cumplimiento legal, tecnología y cultura organizacional, identificando brechas críticas y trazando una hoja de ruta para potenciar tu competitividad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo ayuda BOSS Asesorías en el cumplimiento de la Ley de 40 Horas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Brindamos asesoría legal y técnica para ajustar contratos, optimizar tiempos de trabajo y asegurar que tu organización cumpla con la nueva jornada laboral manteniendo o mejorando los niveles de productividad."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" id="logo-anchor">
+        <img src="images/logo_boss-removebg-preview.webp" alt="BOSS Asesorías Logo" class="logo-img" />
+      </a>
+      <nav class="desktop-nav" id="desktop-nav">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#dimensiones" class="nav-link">Soluciones</a>
+        <a href="#porque-boss" class="nav-link">¿Por qué BOSS?</a>
+        <a href="#cultura" class="nav-link">Áreas</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <nav class="mobile-nav">
+        <a href="#inicio" class="mobile-nav-link" onclick="closeMobileMenu()">Inicio</a>
+        <a href="#dimensiones" class="mobile-nav-link" onclick="closeMobileMenu()">Soluciones</a>
+        <a href="#porque-boss" class="mobile-nav-link" onclick="closeMobileMenu()">¿Por qué BOSS?</a>
+        <a href="#cultura" class="mobile-nav-link" onclick="closeMobileMenu()">Áreas</a>
+        <a href="#contacto" class="mobile-nav-link" onclick="closeMobileMenu()">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-section">
+      <img src="images/hero1.webp" alt="Equipo de profesionales trabajando en un proyecto" class="hero-bg" />
+      <div class="hero-overlay"></div>
+      <div class="hero-content animate-fade-up">
+        <h1 class="hero-title">Bienestar • Organización • Salud • Seguridad</h1>
+        <p class="hero-subtitle">
+          En BOSS Asesorías conectamos Bienestar, Tecnología y Cultura Organizacional para fortalecer tu empresa y proteger a tu equipo en Chile.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn btn-accent">Solicita una Asesoría Estratégica</a>
+          <a href="https://api.whatsapp.com/send?phone=56992895726&text=Hola%2C%20quiero%20solicitar%20una%20asesor%C3%ADa%20estrat%C3%A9gica%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:6px;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿POR QUÉ BOSS? -->
+    <section id="porque-boss" class="section bg-white">
+      <div class="container">
+        <div class="two-col-grid">
+          <div class="order-2">
+            <h2 class="section-title">Tu Aliado Estratégico en Transformación y Cuidado Empresarial</h2>
+            <div class="section-body">
+              <p>En BOSS ASESORÍAS integramos el Bienestar Laboral, la Gestión de Talento y la Tecnología para ofrecer una solución 360°. Este enfoque multidimensional nos permite transformar los desafíos de tu empresa en oportunidades de crecimiento sostenible y eficiencia operativa.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary">Conversemos sobre tu organización</a>
+          </div>
+          <div class="order-1">
+            <img src="images/manos-de-negocios-unieron-trabajo-en-equipo.webp" alt="Manos de empresarios unidas simbolizando trabajo en equipo" class="section-image" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUESTROS EJES DE TRANSFORMACIÓN -->
+    <section id="dimensiones" class="section bg-card">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Nuestros Ejes de Transformación</h2>
+          <p class="section-subtitle">Impulsamos el cambio a través de la seguridad, el talento y la innovación tecnológica.</p>
+        </div>
+        <div class="cards-grid">
+
+          <!-- Card 1: Bienestar Laboral -->
+          <div class="card">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1763684041948-f254c06b1a05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Trabajador con equipo de protección en planta industrial" class="card-image" loading="lazy" />
+            </div>
+            <div class="card-header">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <h3 class="card-title">Bienestar Laboral &amp; Seguridad</h3>
+              <p class="card-desc">Protegemos a las personas y fortalecemos la cultura preventiva.</p>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Asesoría Estratégica en Riesgos</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Evaluaciones Ergonómicas</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Protocolos de Salud Mental</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Auditorías y Sistemas de Gestión</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Muestreo de Asbestos</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Vigilancia de la Salud</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Evaluación de Ambientes (Ruido, Sílice, Gases)</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#contacto" class="btn-link">Ver Servicios de Bienestar →</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Gestión Legal -->
+          <div class="card">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1687289133469-b2a07a13b78b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Documentos laborales y contrato sobre escritorio" class="card-image" loading="lazy" />
+            </div>
+            <div class="card-header">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h3 class="card-title">Gestión Legal &amp; Administrativa</h3>
+              <p class="card-desc">Procesos claros, cumplimiento normativo y eficiencia operativa.</p>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Gestión de Contratos y Nexos</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Remuneraciones y Cotizaciones</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Finiquitos y Control Documental</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Planificación Tributaria Mensual</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Administración de Activos y Edificios</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#contacto" class="btn-link">Ver Servicios de Gestión →</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Tecnología -->
+          <div class="card">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Técnico trabajando en computador con interfaz digital" class="card-image" loading="lazy" />
+            </div>
+            <div class="card-header">
+              <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><path d="M5 8v3m0 5v3m14-11v8M8 5h3m5 0h3M8 19h3"/></svg>
+              </div>
+              <h3 class="card-title">Soluciones Tecnológicas Estratégicas</h3>
+              <p class="card-desc">Tecnología para proteger datos, mejorar productividad y asegurar continuidad.</p>
+            </div>
+            <div class="card-content">
+              <ul class="service-list">
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Desarrollo Web y Apps a Medida</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Integración de Inteligencia Artificial</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Soporte Técnico de Alto Nivel</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Recuperación de Datos Críticos</span></li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Gestión de Identidad Digital</span></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <a href="#contacto" class="btn-link">Ver Servicios Tecnológicos →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="section bg-white">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <div class="faq-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+          <p class="section-subtitle">Resolvemos tus dudas sobre cómo podemos transformar tu organización.</p>
+        </div>
+        <div class="accordion" id="faq-accordion">
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>¿En qué consiste la asesoría estratégica inicial?</span>
+              <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p>Es una evaluación profunda donde nuestros expertos analizan el estado actual de tu empresa en seguridad, cumplimiento legal, tecnología y cultura organizacional, identificando brechas críticas y trazando una hoja de ruta para potenciar tu competitividad.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>¿Cómo ayuda BOSS Asesorías en el cumplimiento de la Ley de 40 Horas?</span>
+              <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p>Brindamos asesoría legal y técnica para ajustar contratos, optimizar tiempos de trabajo y asegurar que tu organización cumpla con la nueva jornada laboral manteniendo o mejorando los niveles de productividad.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>¿Qué alcance tiene su soporte tecnológico?</span>
+              <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p>Ofrecemos desde soporte técnico de alto nivel hasta desarrollo de software a medida y auditorías avanzadas de ciberseguridad, asegurando que la tecnología sea un motor de crecimiento y no un riesgo operativo.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-trigger" aria-expanded="false">
+              <span>¿Cómo impacta la gestión de cultura en mis resultados?</span>
+              <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-content">
+              <p>Una cultura sólida reduce la rotación, aumenta el compromiso y mejora la productividad. Intervenimos en la estructura y el clima laboral para alinear el talento humano con los objetivos de negocio de la empresa.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CULTURA Y DESARROLLO -->
+    <section id="cultura" class="section bg-muted">
+      <div class="container">
+        <div class="two-col-grid">
+          <div class="order-1">
+            <img src="https://images.unsplash.com/photo-1628147529780-36964fbb8d54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Grupo de trabajadores en capacitación de seguridad laboral" class="section-image" loading="lazy" />
+          </div>
+          <div class="order-2">
+            <h2 class="section-title">Cultura y Desarrollo: El Corazón de tu Empresa</h2>
+            <p class="section-body-text">
+              Intervenimos en la estructura y el clima de tu organización para potenciar el talento humano y asegurar resultados sostenibles.
+            </p>
+            <div class="cultura-grid">
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Diagnóstico de Clima y Cultura</span></div>
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Gestión del Cambio Organizacional</span></div>
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Coaching de Liderazgo Estratégico</span></div>
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Evaluación de Desempeño 360°</span></div>
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Diseño de Estructuras Eficientes</span></div>
+              <div class="cultura-item"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg><span>Programas de Desarrollo de Talento</span></div>
+            </div>
+            <a href="#contacto" class="btn btn-primary">Solicitar más Información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICIAS / PERSPECTIVAS -->
+    <section id="noticias" class="section bg-card">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Perspectivas y Actualidad</h2>
+          <p class="section-subtitle">Mantente informado sobre las tendencias que están redefiniendo el mundo empresarial en Chile.</p>
+        </div>
+        <div class="news-grid">
+
+          <div class="news-card">
+            <div class="news-image-wrap">
+              <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Evaluación ergonómica de un puesto de trabajo en casa" class="news-image" loading="lazy" />
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">Ergonomía y Trabajo Híbrido: Nuevas Exigencias para 2026</h3>
+              <p class="news-summary">El aumento de enfermedades musculoesqueléticas en el hogar ha puesto la lupa en las condiciones del teletrabajo. Las empresas deben certificar que sus empleados cuentan con el equipamiento adecuado. En BOSS Asesorías realizamos evaluaciones de puestos de trabajo a distancia para garantizar la salud de tu equipo y el cumplimiento normativo.</p>
+              <a href="#contacto" class="btn-link">Conocer la solución →</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-image-wrap">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Firma de documentos digitales en una tablet" class="news-image" loading="lazy" />
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">Modernización de la Gestión de Personas: El Fin del Papel</h3>
+              <p class="news-summary">La digitalización de contratos y finiquitos no es solo una tendencia, es una necesidad para la agilidad operativa y el resguardo legal. Gestionar miles de documentos físicos es ineficiente y riesgoso ante fiscalizaciones. Optimizamos toda tu gestión documental y legal para que tu empresa sea más ágil, segura y 100% digital.</p>
+              <a href="#contacto" class="btn-link">Conocer la solución →</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-image-wrap">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Interfaz de seguridad digital con candado y códigos de datos" class="news-image" loading="lazy" />
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">Ciberseguridad en la Era de la IA: Protegiendo tu Información Crítica</h3>
+              <p class="news-summary">Los ataques informáticos son cada vez más sofisticados, utilizando inteligencia artificial para vulnerar sistemas tradicionales. Proteger los datos de tus clientes y colaboradores es fundamental para la continuidad del negocio. Auditamos tu infraestructura y blindamos tus activos digitales con soluciones tecnológicas de vanguardia.</p>
+              <a href="#contacto" class="btn-link">Conocer la solución →</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-image-wrap">
+              <img src="https://images.unsplash.com/photo-1737644467636-6b0053476bb2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Robot moderno interactuando con interfaz digital" class="news-image" loading="lazy" />
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">Cultura y Liderazgo: La Clave de la Retención de Talento</h3>
+              <p class="news-summary">En un mercado competitivo, la cultura organizacional es el mayor diferenciador. Los líderes que inspiran y gestionan el cambio son los que llevan a sus empresas al éxito. Diseñamos programas de transformación cultural y liderazgo estratégico para que tu organización sea un imán de talento y eficiencia.</p>
+              <a href="#contacto" class="btn-link">Conocer la solución →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section bg-white">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">¿Listo para potenciar tu organización?</h2>
+          <p class="section-subtitle">Déjanos tu mensaje y un consultor experto te contactará para una asesoría estratégica.</p>
+        </div>
+        <div class="contact-grid">
+          <!-- Info de contacto -->
+          <div class="contact-info">
+            <h3 class="contact-info-title">Información de Contacto</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <strong>Viña del Mar, Chile</strong><br/>
+                  <span class="contact-sub">Atención a nivel nacional.</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+56992895726" class="contact-link">+56 9 9289 5726</a>
+              </div>
+              <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:contacto@bossasesorias.cl" class="contact-link">contacto@bossasesorias.cl</a>
+              </div>
+            </div>
+            <div class="map-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.541334698509!2d-71.54716498481198!3d-33.01633538089938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7009a567635%3A0x86134a66a1a44131!2s13%20Nte%20853%2C%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1sen!2scl!4v1684348265000"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de BOSS ASESORÍAS en Viña del Mar"
+                class="map-iframe"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="contact-form-wrap">
+            <div class="form-card">
+              <h3 class="form-title">Envíanos un mensaje</h3>
+              <form id="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="name" class="form-label">Nombre Completo</label>
+                  <input type="text" id="name" name="name" placeholder="Tu nombre completo" required class="form-input" />
+                  <span class="form-error" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <input type="email" id="email" name="email" placeholder="tu@email.com" required class="form-input" />
+                  <span class="form-error" id="email-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Teléfono (Opcional)</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+56 9 1234 5678" class="form-input" />
+                </div>
+                <div class="form-group">
+                  <label for="message" class="form-label">¿En qué podemos ayudarte?</label>
+                  <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." rows="5" required class="form-textarea"></textarea>
+                  <span class="form-error" id="message-error"></span>
+                </div>
+                <button type="submit" class="btn btn-accent btn-full" id="submit-btn">Enviar Mensaje</button>
+              </form>
+              <!-- Toast notification -->
+              <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/logo_boss-removebg-preview.webp" alt="BOSS Asesorías Logo" class="footer-logo" />
+          </a>
+          <p class="footer-tagline">Conectamos Bienestar, Tecnología y Gestión para Impulsar tu Empresa.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/BossAsesorias" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/boss_asesorias/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/boss-asesorias-8b9786118/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=56992895726&text=Hola%2C%20quiero%20solicitar%20una%20asesor%C3%ADa%20estrat%C3%A9gica%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <h3 class="footer-heading">Navegación</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio" class="footer-link">Inicio</a></li>
+            <li><a href="#dimensiones" class="footer-link">Soluciones</a></li>
+            <li><a href="#porque-boss" class="footer-link">Empresa</a></li>
+            <li><a href="#contacto" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-cta">
+          <h3 class="footer-heading">¿Listo para empezar?</h3>
+          <p class="footer-cta-text">Solicita una asesoría estratégica y descubre cómo podemos fortalecer tu organización.</p>
+          <a href="#contacto" class="btn btn-accent mt-4">Contáctanos</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> BOSS ASESORÍAS. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://api.whatsapp.com/send?phone=56992895726&text=Hola%2C%20quiero%20solicitar%20una%20asesor%C3%ADa%20estrat%C3%A9gica%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp" id="whatsapp-float">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="whatsapp-tooltip">¡Escríbenos!</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
