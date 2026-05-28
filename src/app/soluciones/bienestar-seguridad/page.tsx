@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Bienestar Laboral y Seguridad | Prevención de Riesgos y Salud Ocupacional',
@@ -67,8 +68,40 @@ const servicios = [
 ];
 
 export default function BienestarPage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Bienestar Laboral y Seguridad Ocupacional",
+    "provider": {
+      "@type": "Organization",
+      "name": "BOSS Asesorías",
+      "url": "https://www.bossasesorias.cl"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "description": "Servicios integrales de prevención de riesgos, salud ocupacional, evaluaciones ergonómicas, protocolos de salud mental y vigilancia de la salud para empresas en Chile.",
+    "serviceType": "Prevención de Riesgos y Salud Ocupacional"
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo implementar un sistema de gestión de seguridad laboral en tu empresa",
+    "description": "Proceso paso a paso para implementar prevención de riesgos, evaluaciones de puestos y protocolos de salud en organizaciones chilenas.",
+    "step": [
+      { "@type": "HowToStep", "name": "Diagnóstico Inicial", "text": "Realizamos una evaluación integral de los riesgos existentes en la empresa y sus instalaciones." },
+      { "@type": "HowToStep", "name": "Diseño del Plan Preventivo", "text": "Elaboramos un plan de acción personalizado con medidas correctivas y preventivas priorizadas." },
+      { "@type": "HowToStep", "name": "Implementación de Protocolos", "text": "Aplicamos los protocolos de seguridad, salud mental y ergonometría según normativa vigente." },
+      { "@type": "HowToStep", "name": "Capacitación y Seguimiento", "text": "Capacitamos a los equipos y realizamos auditorías periódicas para asegurar el cumplimiento continuo." }
+    ]
+  };
+
   return (
     <>
+      <Script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <Script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/bienestar-laboral.webp"

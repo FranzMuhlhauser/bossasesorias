@@ -88,27 +88,35 @@ const culturaServicios = [
 const news = [
     {
         title: "Reducción de Jornada 2026: Cómo implementar las 42 horas",
-        summary: "Este 26 de abril entra en vigor la segunda etapa de la Ley 40 Horas, reduciendo la jornada a 42 horas semanales. En BOSS Asesorías te ayudamos a reorganizar tus turnos y actualizar contratos para cumplir con la normativa y mantener la productividad de tu equipo.",
+        summary: "La segunda etapa de la Ley 40 Horas (Ley 21.561) redujo la jornada laboral a 42 horas semanales en abril 2026. En BOSS Asesorías te ayudamos a reorganizar turnos, actualizar contratos y cumplir la normativa manteniendo la productividad de tu equipo.",
         image: newsImages['news-1'],
         link: "/soluciones/gestion-legal",
+        sourceLabel: "Ver Ley 21.561 oficial →",
+        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1178064",
     },
     {
         title: "Ley Karin: El nuevo estándar en prevención de acoso laboral",
-        summary: "A dos años de su implementación, la Ley Karin exige protocolos de prevención activa mucho más robustos. No se trata solo de reaccionar, sino de transformar la cultura organizacional. Auditamos tus canales de denuncia y capacitamos a tus líderes en entornos libres de violencia.",
+        summary: "La Ley Karin (Ley 21.643) establece protocolos de prevención activa del acoso laboral y sexual. Exige canales de denuncia, investigaciones formales y programas de sensibilización. Auditamos tu cumplimiento y capacitamos a tus líderes.",
         image: newsImages['news-2'],
         link: "/soluciones/bienestar-seguridad",
+        sourceLabel: "Ver Ley 21.643 oficial →",
+        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1193522",
     },
     {
         title: "Ley Marco de Ciberseguridad: ¿Está tu empresa preparada para la ANCI?",
-        summary: "Con la nueva Agencia Nacional de Ciberseguridad (ANCI) en pleno funcionamiento, las exigencias técnicas para proteger datos críticos han subido de nivel. Blindamos tu infraestructura digital y aseguramos la continuidad de tu negocio frente a las nuevas normativas chilenas.",
+        summary: "La Ley Marco de Ciberseguridad (Ley 21.663) crea la Agencia Nacional de Ciberseguridad (ANCI), estableciendo exigencias técnicas para proteger datos críticos. Blindamos tu infraestructura y aseguramos la continuidad operacional de tu negocio.",
         image: newsImages['news-3'],
         link: "/soluciones/tecnologia",
+        sourceLabel: "Ver Ley 21.663 oficial →",
+        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1209699",
     },
     {
         title: "IA y Cultura Organizacional: Gestionando el riesgo de privacidad",
-        summary: "El uso masivo de IA generativa por parte de los empleados plantea nuevos desafíos para la privacidad de datos sensibles. Diseñamos políticas internas y programas de cultura organizacional para integrar la IA de forma segura, ética y eficiente en tu empresa.",
+        summary: "El uso masivo de IA generativa plantea nuevos desafíos de privacidad de datos sensibles en empresas. Diseñamos políticas internas y programas de cultura organizacional para integrar la IA de forma segura, ética y eficiente.",
         image: newsImages['news-4'],
         link: "/soluciones/capacitaciones",
+        sourceLabel: null,
+        sourceHref: null,
     }
 ];
 
@@ -343,9 +351,21 @@ export default function Home() {
                             <CardContent className="flex flex-col flex-grow p-6">
                                 <h3 className="text-xl font-semibold text-primary mb-3 flex-grow">{item.title}</h3>
                                 <p className="text-muted-foreground mb-4 text-sm">{item.summary}</p>
-                                <Button asChild variant="link" className="text-accent font-semibold p-0 self-start mt-auto">
+                                <div className="flex flex-col gap-2 mt-auto">
+                                  <Button asChild variant="link" className="text-accent font-semibold p-0 self-start">
                                     <Link href={item.link}>Conocer la solución &rarr;</Link>
-                                </Button>
+                                  </Button>
+                                  {item.sourceHref && item.sourceLabel && (
+                                    <a
+                                      href={item.sourceHref}
+                                      target="_blank"
+                                      rel="nofollow noopener noreferrer"
+                                      className="text-xs text-muted-foreground hover:text-accent transition-colors"
+                                    >
+                                      {item.sourceLabel}
+                                    </a>
+                                  )}
+                                </div>
                             </CardContent>
                         </Card>
                     ))}

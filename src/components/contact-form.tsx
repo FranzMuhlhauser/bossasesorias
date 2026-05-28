@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/app/actions";
+import { gtagEvent } from '@/lib/analytics';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -35,6 +36,10 @@ export function ContactForm() {
         title: "Mensaje Enviado",
         description: state.message,
       });
+      // Fire conversion event for analytics if configured
+      try {
+        gtagEvent('contact_form_submission', { method: 'contact_form' });
+      } catch (e) {}
       formRef.current?.reset();
     } else if (state.message && (state.errors || !state.success)) {
        toast({

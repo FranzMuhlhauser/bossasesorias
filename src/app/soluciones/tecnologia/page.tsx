@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Soluciones Tecnológicas Empresariales | Desarrollo Web, IA y Soporte Técnico',
@@ -47,8 +48,40 @@ const servicios = [
 
 
 export default function TecnologiaPage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Soluciones Tecnológicas Empresariales",
+    "provider": {
+      "@type": "Organization",
+      "name": "BOSS Asesorías",
+      "url": "https://www.bossasesorias.cl"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "description": "Desarrollo web a medida, aplicaciones personalizadas, integración de inteligencia artificial, soporte técnico especializado y recuperación de datos para empresas en Chile.",
+    "serviceType": "Desarrollo Tecnológico y Ciberseguridad"
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo digitalizar y proteger la infraestructura tecnológica de tu empresa",
+    "description": "Guía paso a paso para implementar soluciones digitales, ciberseguridad y soporte tecnológico en empresas chilenas según la Ley Marco de Ciberseguridad (Ley 21.663).",
+    "step": [
+      { "@type": "HowToStep", "name": "Diagnóstico Digital", "text": "Evaluamos el estado actual de la infraestructura tecnológica e identificamos brechas de seguridad y productividad." },
+      { "@type": "HowToStep", "name": "Diseño de Solución", "text": "Diseñamos un plan tecnológico a medida: web, apps, IA o ciberseguridad según las necesidades del negocio." },
+      { "@type": "HowToStep", "name": "Implementación", "text": "Desarrollamos e implementamos la solución con estándares de seguridad y cumplimiento normativo chileno." },
+      { "@type": "HowToStep", "name": "Soporte y Continuidad", "text": "Garantizamos continuidad operacional con soporte técnico especializado y respaldo de datos." }
+    ]
+  };
+
   return (
     <>
+      <Script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <Script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/areatecnologica.webp"

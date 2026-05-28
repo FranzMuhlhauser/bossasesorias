@@ -47,12 +47,45 @@ export default function ContactPage() {
     }
   };
 
+  const faqsContact = [
+    {
+      question: '¿Cuánto tiempo tarda el primer diagnóstico?',
+      answer: 'Realizamos un primer diagnóstico en 48 horas hábiles para identificar tus necesidades críticas y proponer acciones inmediatas en bienestar, legalidad y tecnología.',
+    },
+    {
+      question: '¿Puedo agendar una asesoría remota o presencial?',
+      answer: 'Ofrecemos asesorías remotas para todo Chile y asesorías presenciales en Viña del Mar y la región de Valparaíso según la complejidad del proyecto.',
+    },
+    {
+      question: '¿Qué información debo entregar antes de la asesoría?',
+      answer: 'Solicitamos datos básicos de tu organización, el alcance del servicio y los desafíos principales para preparar una propuesta personalizada y eficiente.',
+    },
+  ];
+
+  const faqContactJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsContact.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Script
         id="local-business-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <Script
+        id="contact-faq-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqContactJsonLd) }}
       />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
@@ -111,6 +144,20 @@ export default function ContactPage() {
                       className="rounded-lg shadow-xl object-cover"
                   />
               </div>
+            </div>
+
+            <div className="space-y-8 lg:col-span-2">
+              <section id="faq-contacto" className="rounded-3xl border border-border bg-surface p-8 shadow-lg">
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-bold text-primary">Preguntas frecuentes sobre asesorías</h2>
+                  {faqsContact.map((faq, index) => (
+                    <div key={index} className="border-t border-border pt-6 first:border-t-0">
+                      <h3 className="text-lg font-semibold text-foreground">{faq.question}</h3>
+                      <p className="mt-3 text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
             </div>
 
             <div>
