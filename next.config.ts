@@ -28,6 +28,9 @@ const csp = `default-src 'self'; img-src 'self' data: https:; script-src ${scrip
 
 const nextConfig: NextConfig = {
   /* config options here */
+  turbopack: {
+    root: process.cwd(),
+  },
   typescript: {
     ignoreBuildErrors: false,
   },

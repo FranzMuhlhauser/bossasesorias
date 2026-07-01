@@ -144,7 +144,7 @@ export default function ContactPage() {
               
               <div className="pt-4">
                   <Image
-                      src="/images/contacto.webp"
+                      src="/images/contactoinicio.webp"
                       alt="Equipo de BOSS Asesorías listo para atenderte"
                       width={800}
                       height={600}
