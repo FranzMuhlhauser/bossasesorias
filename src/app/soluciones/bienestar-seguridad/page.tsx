@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -67,6 +68,12 @@ const servicios = [
   }
 ];
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Soluciones', href: '/soluciones' },
+  { label: 'Bienestar y Seguridad', href: '/soluciones/bienestar-seguridad' },
+];
+
 export default function BienestarPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -100,6 +107,7 @@ export default function BienestarPage() {
 
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <Script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <Script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">

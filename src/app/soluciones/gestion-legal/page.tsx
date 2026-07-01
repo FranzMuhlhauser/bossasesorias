@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Gestión Legal y Administrativa | Remuneraciones, Contratos y Cumplimiento',
@@ -58,9 +60,48 @@ const servicios = [
 ];
 
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Soluciones', href: '/soluciones' },
+  { label: 'Gestión Legal', href: '/soluciones/gestion-legal' },
+];
+
 export default function LegalPage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gestión Legal y Administrativa",
+    "provider": {
+      "@type": "Organization",
+      "name": "BOSS Asesorías",
+      "url": "https://www.bossasesorias.cl"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "description": "Servicios de gestión legal, remuneraciones, contratos laborales, impuestos y administración documental para empresas en Chile.",
+    "serviceType": "Gestión Legal y Administrativa Empresarial"
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo optimizar la gestión legal y administrativa de tu empresa en Chile",
+    "description": "Proceso paso a paso para implementar gestión de contratos, remuneraciones, finiquitos y cumplimiento normativo en organizaciones chilenas.",
+    "step": [
+      { "@type": "HowToStep", "name": "Diagnóstico Legal y Administrativo", "text": "Evaluamos el estado actual de la documentación laboral, contratos y procesos administrativos de la empresa." },
+      { "@type": "HowToStep", "name": "Diseño del Plan de Gestión", "text": "Elaboramos un plan de optimización con medidas para regularizar y mejorar los procesos administrativos y legales." },
+      { "@type": "HowToStep", "name": "Implementación de Procesos", "text": "Aplicamos la gestión de remuneraciones, contratos, finiquitos y control documental según normativa vigente." },
+      { "@type": "HowToStep", "name": "Monitoreo y Actualización", "text": "Realizamos seguimiento periódico para asegurar el cumplimiento continuo y la actualización normativa." }
+    ]
+  };
+
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
+      <Script id="service-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <Script id="howto-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/gestion_legal.webp"

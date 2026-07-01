@@ -2,6 +2,14 @@
 
 import { z } from "zod";
 
+const isDev = process.env.NODE_ENV === 'development';
+
+function devLog(...args: unknown[]) {
+  if (isDev) {
+    console.error(...args);
+  }
+}
+
 const contactSchema = z.object({
   name: z.string().min(2, "El nombre debe tener al menos 2 caracteres."),
   email: z.string().email("Por favor, introduce un email válido."),
@@ -24,7 +32,7 @@ export async function submitContactForm(prevState: FormState, formData: FormData
   const formspreeId = process.env.FORMSPREE_ID; // Obtener de https://formspree.io
 
   if (!formspreeId) {
-    console.error("Falta la configuración de FORMSPREE_ID en el archivo .env.");
+    devLog("Falta la configuración de FORMSPREE_ID en el archivo .env.");
     return {
       message: "Error del servidor: La configuración de contacto no está completa.",
       success: false,
@@ -73,7 +81,7 @@ export async function submitContactForm(prevState: FormState, formData: FormData
 
     if (!response.ok) {
        const result = await response.json();
-       console.error("Formspree error:", result);
+       devLog("Formspree error:", result);
        return {
          message: "Hubo un error al enviar tu consulta. Por favor, inténtalo más tarde.",
          success: false,
@@ -87,7 +95,7 @@ export async function submitContactForm(prevState: FormState, formData: FormData
     };
 
   } catch (exception) {
-    console.error("Exception sending email via Formspree:", exception);
+    devLog("Exception sending email via Formspree:", exception);
     return {
       message: "Hubo un error inesperado al enviar tu mensaje. Por favor, inténtalo más tarde.",
       success: false,

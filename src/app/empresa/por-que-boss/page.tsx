@@ -3,6 +3,15 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, Files, Cpu, Info } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Breadcrumb } from '@/components/breadcrumb';
+import Script from 'next/script';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '¿Por qué BOSS Asesorías? | Consultoría Estratégica 360° en Chile',
+  description: 'Conoce la historia y el propósito de BOSS Asesorías. Bienestar, Organización, Salud y Seguridad — los pilares de nuestra consultoría integral para empresas en Chile.',
+  keywords: ['por qué boss asesorías', 'consultoría estratégica chile', 'transformación organizacional', 'pilares boss', 'bienestar organización salud seguridad'],
+};
 
 
 const dimensions = [
@@ -23,9 +32,36 @@ const dimensions = [
   },
 ];
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Empresa', href: '/empresa/por-que-boss' },
+  { label: '¿Por qué BOSS?', href: '/empresa/por-que-boss' },
+];
+
 export default function PorqueBossPage() {
+  const aboutJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "¿Por qué BOSS Asesorías?",
+    "description": "BOSS Asesorías conecta bienestar laboral, gestión estratégica y tecnología para fortalecer organizaciones en Chile. Nuestro nombre representa Bienestar, Organización, Salud y Seguridad.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BOSS Asesorías",
+      "url": "https://www.bossasesorias.cl",
+      "description": "Consultoría integral que integra Bienestar, Organización, Salud y Seguridad para empresas en Chile.",
+      "slogan": "Bienestar • Organización • Salud • Seguridad",
+      "foundingDate": "2019",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      }
+    }
+  };
+
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
+      <Script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-industrial.webp"
@@ -50,10 +86,10 @@ export default function PorqueBossPage() {
               <h2 className="text-3xl font-semibold text-primary mb-6">BOSS ASESORÍAS: Transformación Organizacional 360°</h2>
                <div className="prose lg:prose-lg max-w-none text-muted-foreground space-y-4">
                 <p>
-                  En BOSS ASESORÍAS conectamos bienestar laboral, gestión estratégica y tecnología para fortalecer tu organización desde sus cimientos.
+                  Desde 2019, en BOSS Asesorías conectamos bienestar laboral, gestión estratégica y tecnología para fortalecer organizaciones en Chile. Hemos asesorado a empresas de diversos sectores —industrial, legal, tecnológico— ayudándoles a cumplir normativas como la Ley de 40 Horas (Ley 21.561), la Ley Karin (Ley 21.643) y la Ley Marco de Ciberseguridad (Ley 21.663).
                 </p>
                 <p>
-                  Nuestro enfoque integrado transforma desafíos complejos como seguridad, eficiencia y cumplimiento, en oportunidades de crecimiento interconectado. Cada área refuerza a las demás, impulsando un ciclo continuo de mejora, resiliencia y resultados sostenibles.
+                  Nuestro enfoque integrado transforma desafíos complejos como seguridad, eficiencia y cumplimiento, en oportunidades de crecimiento interconectado. Cada área refuerza a las demás, impulsando un ciclo continuo de mejora, resiliencia y resultados sostenibles. Con cobertura en todo Chile, entregamos soluciones presenciales en la Región de Valparaíso y remotas a nivel nacional.
                 </p>
                  <Alert className="border-accent/50 text-foreground">
                   <Info className="h-5 w-5 text-accent" />

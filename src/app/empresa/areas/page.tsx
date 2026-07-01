@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Factory, Briefcase, Cpu, TrendingUp, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Breadcrumb } from '@/components/breadcrumb';
 import { cn } from '@/lib/utils';
 
 const areas = [
@@ -40,12 +41,18 @@ const areas = [
   }
 ];
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Empresa', href: '/empresa/areas' },
+  { label: 'Áreas', href: '/empresa/areas' },
+];
+
 export default function AreasPage() {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   return (
     <>
-      <title>Áreas de Especialización | Industrial, Legal, Tecnológica y Cultura</title>
+      <Breadcrumb items={breadcrumbItems} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-administrativa.webp"

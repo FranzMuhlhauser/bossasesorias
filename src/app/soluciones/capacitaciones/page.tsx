@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Cultura y Desarrollo Organizacional | Consultoría en Talento y Cambio',
@@ -41,9 +43,48 @@ const servicios = [
   }
 ];
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Soluciones', href: '/soluciones' },
+  { label: 'Cultura y Desarrollo', href: '/soluciones/capacitaciones' },
+];
+
 export default function CulturaPage() {
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cultura y Desarrollo Organizacional",
+    "provider": {
+      "@type": "Organization",
+      "name": "BOSS Asesorías",
+      "url": "https://www.bossasesorias.cl"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "description": "Servicios de diagnóstico de clima laboral, gestión del cambio, coaching directivo, evaluación de desempeño y desarrollo de talento para empresas en Chile.",
+    "serviceType": "Consultoría en Cultura y Desarrollo Organizacional"
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Cómo transformar la cultura organizacional de tu empresa",
+    "description": "Proceso paso a paso para implementar diagnósticos de clima, gestión del cambio y desarrollo de talento en organizaciones chilenas.",
+    "step": [
+      { "@type": "HowToStep", "name": "Diagnóstico de Clima y Cultura", "text": "Realizamos un análisis profundo de las percepciones, valores y comportamientos que definen a la organización." },
+      { "@type": "HowToStep", "name": "Diseño del Plan de Intervención", "text": "Diseñamos un plan de transformación cultural con objetivos medibles y acciones concretas." },
+      { "@type": "HowToStep", "name": "Implementación y Coaching", "text": "Ejecutamos las intervenciones: coaching directivo, gestión del cambio y desarrollo de talento." },
+      { "@type": "HowToStep", "name": "Evaluación y Seguimiento", "text": "Medimos el impacto mediante evaluaciones 360° y ajustamos las estrategias según resultados." }
+    ]
+  };
+
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
+      <Script id="service-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <Script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/Curso-Capacitacion-en-Tecnologia-Digital-para-un-Aprendizaje-Efectivo.webp"

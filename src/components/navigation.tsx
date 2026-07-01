@@ -6,7 +6,6 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import { cn } from "@/lib/utils"
 
 type NavigationProps = {
-  isScrolled?: boolean;
   isMobile?: boolean;
   onLinkClick?: () => void;
 };
@@ -19,14 +18,14 @@ const mainLinks = [
   { href: "/contacto", label: "Contacto" },
 ];
 
-export function Navigation({ isScrolled, isMobile, onLinkClick }: NavigationProps) {
+export function Navigation({ isMobile, onLinkClick }: NavigationProps) {
   const pathname = usePathname();
 
   const linkClasses = (isActive = false) => cn(
     "font-medium transition-colors text-base",
     isMobile 
       ? "text-2xl text-foreground hover:text-accent text-center"
-      : (isScrolled ? "text-foreground hover:text-accent" : "text-white hover:text-accent"),
+      : "text-foreground hover:text-accent",
     isActive && "text-accent"
   );
 

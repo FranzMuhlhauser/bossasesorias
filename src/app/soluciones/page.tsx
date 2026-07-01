@@ -2,8 +2,11 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { ShieldCheck, Files, Cpu, HeartPulse, Building, Microscope, Wrench, FileText, Handshake, Users, TestTube, Truck, Briefcase, Calculator, HandCoins, Check, Library, Bot, Code, MessageSquare, Computer, HardDrive, TrendingUp, UsersRound, Lightbulb, BarChart4, LayoutPanelLeft } from "lucide-react";
+import { ShieldCheck, Files, Cpu, HeartPulse, Building, Microscope, Wrench, FileText, Handshake, Users, TestTube, Truck, Briefcase, Calculator, HandCoins, Check, Library, Bot, Code, MessageSquare, Computer, HardDrive, TrendingUp, UsersRound, Lightbulb, BarChart4, LayoutPanelLeft, HelpCircle } from "lucide-react";
 import Link from "next/link";
+import { Breadcrumb } from '@/components/breadcrumb';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Script from 'next/script';
 import { WhatsappCta } from '@/components/ui/whatsapp-cta';
 
 export const metadata: Metadata = {
@@ -60,9 +63,15 @@ const culturaServicios = [
     { icon: Handshake, title: "Coaching Directivo y Liderazgo", description: "Desarrollo de habilidades críticas para la alta gerencia.", href: "/soluciones/capacitaciones" },
 ];
 
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Soluciones', href: '/soluciones' },
+];
+
 export default function SolucionesPage() {
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
        <section className="relative flex items-center justify-center text-center text-white pt-32 pb-20 md:pt-40 md:pb-28">
         <Image
           src="/images/soluciones.webp"
@@ -181,6 +190,84 @@ export default function SolucionesPage() {
           </Tabs>
         </div>
       </section>
+
+      {/* Preguntas Frecuentes (AEO/SEO) */}
+      <section className="py-20 md:py-28 bg-muted/30">
+        <div className="container mx-auto max-w-[800px] px-6">
+          <div className="text-center mb-12">
+            <HelpCircle className="h-12 w-12 text-accent mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">Preguntas Frecuentes sobre Soluciones</h2>
+            <p className="mt-4 text-muted-foreground">Resolvemos tus dudas sobre nuestros servicios empresariales.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="faq-0">
+              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                ¿Cuál es la diferencia entre Bienestar Laboral y Cultura Organizacional?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                Bienestar Laboral se enfoca en seguridad física, salud ocupacional y cumplimiento normativo. Cultura Organizacional trabaja el clima laboral, liderazgo y desarrollo de talento. Ambas áreas se complementan para fortalecer tu empresa.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq-1">
+              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                ¿Ofrecen servicios para empresas de todos los tamaños?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                Sí, desde pequeñas y medianas empresas hasta grandes corporaciones. Adaptamos cada solución al tamaño, industria y necesidades específicas de tu organización, con alcance nacional.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq-2">
+              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                ¿Qué incluye una asesoría en gestión legal y administrativa?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                Incluye análisis de contratos, cálculo de remuneraciones, finiquitos, control documental, declaración de impuestos y administración de edificios. Te ayudamos a cumplir la normativa laboral chilena vigente.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="faq-3">
+              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                ¿Cómo sé qué solución tecnológica necesita mi empresa?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                Realizamos un diagnóstico digital gratuito para evaluar tu infraestructura, identificar brechas de seguridad y productividad, y recomendarte la solución más adecuada: web, app, IA o ciberseguridad.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+
+      <Script
+        id="soluciones-faq-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuál es la diferencia entre Bienestar Laboral y Cultura Organizacional?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Bienestar Laboral se enfoca en seguridad física, salud ocupacional y cumplimiento normativo. Cultura Organizacional trabaja el clima laboral, liderazgo y desarrollo de talento. Ambas áreas se complementan para fortalecer tu empresa." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Ofrecen servicios para empresas de todos los tamaños?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sí, desde pequeñas y medianas empresas hasta grandes corporaciones. Adaptamos cada solución al tamaño, industria y necesidades específicas de tu organización, con alcance nacional." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué incluye una asesoría en gestión legal y administrativa?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Incluye análisis de contratos, cálculo de remuneraciones, finiquitos, control documental, declaración de impuestos y administración de edificios. Te ayudamos a cumplir la normativa laboral chilena vigente." }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo sé qué solución tecnológica necesita mi empresa?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Realizamos un diagnóstico digital gratuito para evaluar tu infraestructura, identificar brechas de seguridad y productividad, y recomendarte la solución más adecuada: web, app, IA o ciberseguridad." }
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }

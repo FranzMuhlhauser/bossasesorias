@@ -22,7 +22,7 @@ const ibmPlexSans = IBM_Plex_Sans({
   variable: '--font-ibm-plex-sans',
 });
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-TRJW5QGG';
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.bossasesorias.cl'),
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: 'https://www.bossasesorias.cl',
     images: [
       {
-        url: 'https://www.bossasesorias.cl/og-image.jpg',
+        url: '/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: 'BOSS Asesorías - Bienestar Laboral, Gestión Legal y Tecnología en Chile',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
-    images: ['https://www.bossasesorias.cl/og-image.jpg'],
+    images: ['/twitter-image.png'],
   },
   robots: {
     index: true,
@@ -81,7 +81,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "BOSS Asesorías",
     "url": "https://www.bossasesorias.cl",
-    "logo": "https://www.bossasesorias.cl/logo.png",
+    "logo": "https://www.bossasesorias.cl/icon.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+56-9-9289-5726",
@@ -99,17 +99,19 @@ export default function RootLayout({
   return (
     <html lang="es" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
       <head>
-        <Script
-          id="gtm-head"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${GTM_ID}');`,
-          }}
-        />
+        {GTM_ID && (
+          <Script
+            id="gtm-head"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${GTM_ID}');`,
+            }}
+          />
+        )}
         <Script
           id="json-ld-org"
           type="application/ld+json"
@@ -117,14 +119,16 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased font-body">
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {GTM_ID && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
         {/* Skip Link para accesibilidad WCAG 2.2 AA */}
         <a
           href="#main"
@@ -133,7 +137,7 @@ export default function RootLayout({
           Saltar al contenido principal
         </a>
         <Header />
-        <main id="main">{children}</main>
+        <main id="main" className="pt-20 md:pt-20">{children}</main>
         <Footer />
         <DynamicWhatsappButton />
         <Toaster />

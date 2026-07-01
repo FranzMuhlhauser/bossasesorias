@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from '@/components/contact-form';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -10,6 +11,11 @@ export const metadata: Metadata = {
   description: 'Contáctanos para una asesoría estratégica inicial. Nuestro equipo de consultores en Chile está listo para ayudarte con soluciones en bienestar laboral, gestión legal y tecnología.',
   keywords: ['contacto asesorías chile', 'asesoría estratégica empresas', 'consultora empresarial chile', 'asesoría integral empresas'],
 };
+
+const breadcrumbItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Contacto', href: '/contacto' },
+];
 
 export default function ContactPage() {
   const localBusinessJsonLd = {
@@ -50,15 +56,15 @@ export default function ContactPage() {
   const faqsContact = [
     {
       question: '¿Cuánto tiempo tarda el primer diagnóstico?',
-      answer: 'Realizamos un primer diagnóstico en 48 horas hábiles para identificar tus necesidades críticas y proponer acciones inmediatas en bienestar, legalidad y tecnología.',
+      answer: 'Realizamos un diagnóstico inicial en 48 horas hábiles. Identificamos tus necesidades críticas en bienestar, legalidad y tecnología, y proponemos acciones inmediatas sin costo.',
     },
     {
       question: '¿Puedo agendar una asesoría remota o presencial?',
-      answer: 'Ofrecemos asesorías remotas para todo Chile y asesorías presenciales en Viña del Mar y la región de Valparaíso según la complejidad del proyecto.',
+      answer: 'Sí, ofrecemos asesorías remotas para todo Chile y presenciales en Viña del Mar y Valparaíso. La modalidad se define según la complejidad del proyecto.',
     },
     {
       question: '¿Qué información debo entregar antes de la asesoría?',
-      answer: 'Solicitamos datos básicos de tu organización, el alcance del servicio y los desafíos principales para preparar una propuesta personalizada y eficiente.',
+      answer: 'Solo datos básicos de tu organización, el servicio de interés y los desafíos principales. Con eso preparamos una propuesta personalizada y eficiente para tu empresa.',
     },
   ];
 
@@ -77,6 +83,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <Breadcrumb items={breadcrumbItems} />
       <Script
         id="local-business-json-ld"
         type="application/ld+json"

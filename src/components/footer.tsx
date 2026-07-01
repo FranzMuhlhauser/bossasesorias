@@ -57,9 +57,12 @@ export default function Footer() {
           <div className="md:col-span-5">
             <h3 className="font-semibold text-white">¿Listo para empezar?</h3>
             <p className="mt-2 text-sm">Solicita una asesoría estratégica y descubre cómo podemos fortalecer tu organización.</p>
-            <div className="mt-4">
-                
-            </div>
+            <Link
+              href="/contacto"
+              className="mt-4 inline-block bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-2.5 px-6 rounded-md transition-all hover:scale-105 text-sm"
+            >
+              Solicitar Asesoría
+            </Link>
           </div>
 
         </div>

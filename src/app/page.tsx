@@ -87,55 +87,55 @@ const culturaServicios = [
 
 const news = [
     {
-        title: "Reducción de Jornada 2026: Cómo implementar las 42 horas",
-        summary: "La segunda etapa de la Ley 40 Horas (Ley 21.561) redujo la jornada laboral a 42 horas semanales en abril 2026. En BOSS Asesorías te ayudamos a reorganizar turnos, actualizar contratos y cumplir la normativa manteniendo la productividad de tu equipo.",
+        title: "Ley de 40 horas en Chile 2026: ¿Cómo implementar las 42 horas semanales?",
+        summary: "La jornada laboral en Chile bajó a 42 horas semanales en 2026. La Dirección del Trabajo exige que la implementación quede bien acordada y respaldada por escrito. Revisa contratos, turnos y remuneraciones para cumplir correctamente con la norma.",
         image: newsImages['news-1'],
         link: "/soluciones/gestion-legal",
-        sourceLabel: "Ver Ley 21.561 oficial →",
-        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1178064",
+        sourceLabel: "Ver artículo completo →",
+        sourceHref: "https://softland.com/cl/ley-de-40-horas-en-chile-2026/",
     },
     {
-        title: "Ley Karin: El nuevo estándar en prevención de acoso laboral",
-        summary: "La Ley Karin (Ley 21.643) establece protocolos de prevención activa del acoso laboral y sexual. Exige canales de denuncia, investigaciones formales y programas de sensibilización. Auditamos tu cumplimiento y capacitamos a tus líderes.",
+        title: "Mes de la Seguridad y Salud en el Trabajo 2026",
+        summary: "El Instituto de Seguridad Laboral impulsó en abril el Mes de la Seguridad y Salud en el Trabajo 2026, con foco en ambientes laborales seguros, saludables y en el entorno psicosocial. La gestión preventiva y la salud ocupacional siguen siendo prioridades en Chile.",
         image: newsImages['news-2'],
         link: "/soluciones/bienestar-seguridad",
-        sourceLabel: "Ver Ley 21.643 oficial →",
-        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1193522",
+        sourceLabel: "Ver artículo completo →",
+        sourceHref: "https://www.isl.gob.cl/mes-de-la-seguridad-y-salud-en-el-trabajo/",
     },
     {
-        title: "Ley Marco de Ciberseguridad: ¿Está tu empresa preparada para la ANCI?",
-        summary: "La Ley Marco de Ciberseguridad (Ley 21.663) crea la Agencia Nacional de Ciberseguridad (ANCI), estableciendo exigencias técnicas para proteger datos críticos. Blindamos tu infraestructura y aseguramos la continuidad operacional de tu negocio.",
+        title: "Ciberseguridad en Chile 2026: cuando dejará de ser opcional",
+        summary: "La ciberseguridad dejó de ser opcional para las empresas chilenas. El aumento de ataques ransomware y las nuevas exigencias regulatorias exigen reforzar prevención, respuesta a incidentes y cumplimiento normativo para evitar interrupciones y sanciones.",
         image: newsImages['news-3'],
         link: "/soluciones/tecnologia",
-        sourceLabel: "Ver Ley 21.663 oficial →",
-        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1209699",
+        sourceLabel: "Ver artículo completo →",
+        sourceHref: "https://www.pwc.com/cl/es/Sala-de-prensa/columnas-de-opinion/2026-el-ano-en-que-la-ciberseguridad-dejo-de-ser-opcional.html",
     },
     {
-        title: "IA y Cultura Organizacional: Gestionando el riesgo de privacidad",
-        summary: "El uso masivo de IA generativa plantea nuevos desafíos de privacidad de datos sensibles en empresas. Diseñamos políticas internas y programas de cultura organizacional para integrar la IA de forma segura, ética y eficiente.",
+        title: "Seguridad y salud laboral: nuevas normas y convenios internacionales",
+        summary: "Chile continúa fortaleciendo su marco de seguridad y salud laboral con nuevas actualizaciones normativas y la promulgación de convenios internacionales. Más énfasis en protocolos, capacitación y control de riesgos en los puestos de trabajo.",
         image: newsImages['news-4'],
-        link: "/soluciones/capacitaciones",
-        sourceLabel: null,
-        sourceHref: null,
+        link: "/soluciones/bienestar-seguridad",
+        sourceLabel: "Ver norma oficial →",
+        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1222695",
     }
 ];
 
 const faqs = [
   {
     question: "¿En qué consiste la asesoría estratégica inicial?",
-    answer: "Es una evaluación profunda donde nuestros expertos analizan el estado actual de tu empresa en seguridad, cumplimiento legal, tecnología y cultura organizacional, identificando brechas críticas y trazando una hoja de ruta para potenciar tu competitividad."
+    answer: "Es una evaluación gratuita donde analizamos tu situación actual en seguridad, cumplimiento legal, tecnología y cultura. Identificamos brechas críticas y trazamos una hoja de ruta personalizada para potenciar tu competitividad."
   },
   {
     question: "¿Cómo ayuda BOSS Asesorías en el cumplimiento de la Ley de 40 Horas?",
-    answer: "Brindamos asesoría legal y técnica para ajustar contratos, optimizar tiempos de trabajo y asegurar que tu organización cumpla con la nueva jornada laboral manteniendo o mejorando los niveles de productividad."
+    answer: "Ajustamos contratos, optimizamos turnos y actualizamos tus procesos de remuneraciones para cumplir con las 42 horas semanales, manteniendo la productividad de tu equipo y evitando multas."
   },
   {
     question: "¿Qué alcance tiene su soporte tecnológico?",
-    answer: "Ofrecemos desde soporte técnico de alto nivel hasta desarrollo de software a medida y auditorías avanzadas de ciberseguridad, asegurando que la tecnología sea un motor de crecimiento y no un riesgo operativo."
+    answer: "Cubrimos desde soporte técnico y desarrollo web a medida hasta integración de IA y auditorías de ciberseguridad. Aseguramos que la tecnología sea un motor de crecimiento, no un riesgo."
   },
   {
     question: "¿Cómo impacta la gestión de cultura en mis resultados?",
-    answer: "Una cultura sólida reduce la rotación, aumenta el compromiso y mejora la productividad. Intervenimos en la estructura y el clima laboral para alinear el talento humano con los objetivos de negocio de la empresa."
+    answer: "Una cultura sólida reduce la rotación, aumenta el compromiso y mejora la productividad. Intervenimos en el clima laboral para alinear el talento humano con los objetivos estratégicos de tu empresa."
   }
 ];
 
@@ -157,12 +157,44 @@ export default function Home() {
     }))
   };
 
+  const newsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Perspectivas y Actualidad - BOSS Asesorías",
+    "description": "Mantente informado sobre las tendencias que están redefiniendo el mundo empresarial en Chile.",
+    "numberOfItems": news.length,
+    "itemListElement": news.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "NewsArticle",
+        "headline": item.title,
+        "description": item.summary,
+        "url": `https://www.bossasesorias.cl${item.link}`,
+        "author": {
+          "@type": "Organization",
+          "name": "BOSS Asesorías"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "BOSS Asesorías"
+        },
+        "inLanguage": "es-CL"
+      }
+    }))
+  };
+
   return (
     <>
       <Script
         id="faq-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <Script
+        id="news-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd) }}
       />
       {/* Hero Section */}
       <section id="inicio" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
@@ -189,7 +221,31 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* Estadísticas — Autoridad GEO */}
+      <section className="py-16 bg-accent/10 border-y border-accent/20">
+        <div className="container mx-auto max-w-[1200px] px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="stats-counter space-y-1" style={{ animationDelay: '0ms' }}>
+              <span className="block text-3xl md:text-4xl font-bold text-accent">+50</span>
+              <span className="text-sm text-muted-foreground">Empresas asesoradas</span>
+            </div>
+            <div className="stats-counter space-y-1" style={{ animationDelay: '100ms' }}>
+              <span className="block text-3xl md:text-4xl font-bold text-accent">2019</span>
+              <span className="text-sm text-muted-foreground">Trayectoria ininterrumpida</span>
+            </div>
+            <div className="stats-counter space-y-1" style={{ animationDelay: '200ms' }}>
+              <span className="block text-3xl md:text-4xl font-bold text-accent">12+</span>
+              <span className="text-sm text-muted-foreground">Años de experiencia legal</span>
+            </div>
+            <div className="stats-counter space-y-1" style={{ animationDelay: '300ms' }}>
+              <span className="block text-3xl md:text-4xl font-bold text-accent">100%</span>
+              <span className="text-sm text-muted-foreground">Cobertura nacional</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ¿Por qué BOSS? */}
       <section id="porque-boss" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto max-w-[1200px] px-6">
@@ -197,7 +253,7 @@ export default function Home() {
                 <div className="order-2 lg:order-1">
                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Tu Aliado Estratégico en Transformación y Cuidado Empresarial</h2>
                     <div className="text-lg text-muted-foreground leading-relaxed mb-8 space-y-4">
-                      <p>En BOSS ASESORÍAS integramos el Bienestar Laboral, la Gestión de Talento y la Tecnología para ofrecer una solución 360°. Este enfoque multidimensional nos permite transformar los desafíos de tu empresa en oportunidades de crecimiento sostenible y eficiencia operativa.</p>
+                      <p>En BOSS ASESORÍAS integramos el Bienestar Laboral, la Gestión de Talento y la Tecnología para ofrecer una solución 360°. Desde 2019, hemos asesorado a empresas chilenas de diversos sectores, ayudándolas a cumplir normativas como la Ley de 40 Horas y la Ley Karin, y a fortalecer su cultura organizacional con resultados medibles.</p>
                     </div>
                     <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-transform hover:scale-105">
                         <Link href="/contacto">Conversemos sobre tu organización</Link>
