@@ -9,6 +9,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -157,6 +158,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         ) : null}
+        <Analytics />
       </body>
     </html>
   );
