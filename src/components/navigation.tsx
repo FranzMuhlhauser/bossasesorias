@@ -33,7 +33,7 @@ export function Navigation({ isMobile, onLinkClick }: NavigationProps) {
     return (
       <nav className="flex flex-col items-center gap-8">
         {mainLinks.map(link => (
-            <Link key={link.href} href={link.href} onClick={onLinkClick} className={linkClasses(pathname === link.href)}>
+            <Link key={link.href} href={link.href} onClick={onLinkClick} className={linkClasses(pathname === link.href)} aria-current={pathname === link.href ? 'page' : undefined}>
                 {link.label}
             </Link>
         ))}
@@ -47,7 +47,7 @@ export function Navigation({ isMobile, onLinkClick }: NavigationProps) {
             {mainLinks.map(link => (
                 <NavigationMenu.Item key={link.href}>
                     <NavigationMenu.Link asChild>
-                        <Link href={link.href} className={linkClasses(pathname === link.href)}>
+                        <Link href={link.href} className={linkClasses(pathname === link.href)} aria-current={pathname === link.href ? 'page' : undefined}>
                             {link.label}
                         </Link>
                     </NavigationMenu.Link>

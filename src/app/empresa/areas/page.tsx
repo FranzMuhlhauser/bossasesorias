@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +5,6 @@ import { Factory, Briefcase, Cpu, TrendingUp, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Breadcrumb } from '@/components/breadcrumb';
-import { cn } from '@/lib/utils';
 
 const areas = [
   {
@@ -48,7 +44,6 @@ const breadcrumbItems = [
 ];
 
 export default function AreasPage() {
-  const [openItem, setOpenItem] = useState<string | null>(null);
 
   return (
     <>
@@ -72,19 +67,10 @@ export default function AreasPage() {
 
       <section className="py-20 md:py-28 bg-muted">
         <div className="container mx-auto max-w-[1200px] px-6">
-          <Accordion 
-            type="single" 
-            collapsible 
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-            value={openItem ?? ''}
-            onValueChange={setOpenItem}
-          >
+          <Accordion type="single" collapsible className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {areas.map((area) => (
-              <AccordionItem value={area.value} key={area.value} className="border-0">
-                <Card className={cn(
-                    "group text-center transition-all duration-300 rounded-lg bg-card shadow-md hover:shadow-xl hover:-translate-y-2 border",
-                    openItem === area.value ? "border-accent" : "border-border"
-                )}>
+              <AccordionItem value={area.value} key={area.value} className="border-0 group">
+                <Card className="text-center transition-all duration-300 rounded-lg bg-card shadow-md hover:shadow-xl hover:-translate-y-2 border group-data-[state=open]:border-accent border-border">
                   <AccordionTrigger className="w-full hover:no-underline p-0">
                     <div className="w-full pt-8 px-6 text-center">
                       <div className="mx-auto bg-primary/10 rounded-full p-4 w-fit border-4 border-card">
@@ -93,7 +79,7 @@ export default function AreasPage() {
                       <h2 className="mt-4 text-2xl font-semibold text-primary">{area.title}</h2>
                       <p className="text-muted-foreground mt-2 mb-4 h-12">{area.description}</p>
                       <div className="flex items-center justify-center text-accent font-semibold text-sm mb-6">
-                         Ver más <ChevronDown className={cn("h-5 w-5 ml-1 transition-transform", openItem === area.value && "rotate-180")} />
+                         Ver más <ChevronDown className="h-5 w-5 ml-1 transition-transform group-data-[state=open]:rotate-180" />
                       </div>
                     </div>
                   </AccordionTrigger>

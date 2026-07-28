@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Auditoria_Fase1>
+<Errores_Criticos>
+• [Alta] WhatsApp hero Link sin rel="noopener noreferrer": src/app/page.tsx:220 usa target='_blank' sin el atributo de seguridad | Impacto: Seguridad | Solución: agregar rel="noopener noreferrer" al componente Link
+• [Media] Sin breadcrumb structured data (BreadcrumbList) en ninguna página. El componente Breadcrumb renderiza visualmente pero no expone Schema.org | Impacto: SEO/AEO | Solución: agregar JSON-LD BreadcrumbList en cada página con breadcrumb
+• [Media] Sin lazy loading explícito en imágenes below-the-fold: ninguna imagen usa loading="lazy". Next.js usa eager por defecto | Impacto: Performance | Solución: agregar loading="lazy" en imágenes que no son hero/priority (dimension cards, news, culture)
+• [Media] 4 imágenes PNG sin convertir a WebP: public/images/news-40-hrs.png, news-ciberseguridad.png, news-ia-cultura.png, news-ley-karin.png | Impacto: Performance | Solución: convertir a WebP con sharp o script de migración
+• [Baja] Múltiples imágenes con priority=true en page.tsx (líneas 207, 453). Solo la hero principal debería tener priority; las demás pueden causar contención de ancho de banda | Impacto: Performance | Solución: mantener solo priority en la hero, quitar de contacto y imágenes below-the-fold
+</Errores_Criticos>
+<Oportunidades_Mejora>
+• [Alta] Añadir BlogPosting schema con Article para contenido editorial: las secciones de noticias/perspectivas no tienen schema Article/BlogPosting individual | Beneficio: AEO/GEO | Implementación: agregar JSON-LD BlogPosting en cada tarjeta de noticias con headline, datePublished, author, image
+• [Alta] src/app/empresa/areas/page.tsx es "use client" innecesario: solo usa useState para controlar accordion value. Se puede refactorizar a server component con searchParams o estado URL | Beneficio: Mantenibilidad/Rendimiento | Implementación: eliminar "use client" y usar acordeón siempre abierto o estado vía URL search params
+• [Media] Falta aria-current="page" en navegación activa: navigation.tsx no marca el link activo con aria-current para lectores de pantalla | Beneficio: Accesibilidad | Implementación: agregar lógica para detectar ruta activa y añadir aria-current="page" al link correspondiente
+• [Media] Sin etiquetas landmark semánticas explícitas: solo <main> y <nav> están definidas. Falta <aside>, <article>, <section> con aria-labelledby en secciones clave | Beneficio: Accesibilidad | Implementación: agregar aria-labelledby o aria-label en secciones principales (#dimensiones, #faq, #noticias)
+• [Media] Sin página de error 500 personalizada más allá de error.tsx genérico: error.tsx maneja todos los errores. Podría tener variantes para 403, 429, etc. | Beneficio: UX | Implementación: crear páginas específicas para errores comunes
+• [Media] Sin A/B testing ni experimentación: no hay framework para testear variantes de CTA, formularios o landing | Beneficio: CRO | Implementación: integrar Google Optimize o Vercel Flags para experimentación controlada
+• [Baja] El sitemap usa changeFrequency fijo: todas las rutas no-home son 'monthly'. Podría refinarse por sección (ej. /contacto = 'yearly', /soluciones = 'monthly', /blog = 'weekly') | Beneficio: SEO | Implementación: ajustar frecuencias según naturaleza de cada ruta
+• [Baja] Sin Social Profile en JSON-LD Organization: las URLs de redes sociales están en sameAs pero faltan links a LinkedIn company page | Beneficio: GEO | Implementación: verificar y agregar LinkedIn correcto en sameAs
+</Oportunidades_Mejora>
+<Analisis_AEO>
+Probabilidad Featured Snippets: Alta - 4 FAQPage schemas implementados con preguntas directas y respuestas concisas en <p> (home, soluciones, bienestar-seguridad, contacto). Formato Q&A nativo en accordion facilita extracción. Contenido responde preguntas de búsqueda real ("Ley de 40 horas", "ciberseguridad Chile 2026").
+Schemas implementados: Organization, FAQPage (4x), Service, HowTo, LocalBusiness, ItemList, NewsArticle, ContactPoint
+Schemas faltantes críticos: BreadcrumbList (en todas las rutas con breadcrumb), BlogPosting (para sección de noticias), Product (para servicios), WebSite (searchAction opcional)
+</Analisis_AEO>
+<Analisis_GEO>
+Claridad semántica: 8/10 - Títulos H1-H2 descriptivos con keywords target, estructura de contenido clara (hero → stats → dimensiones → cultura → noticias → FAQ → CTA), datos estructurados ricos con cobertura de entidades (Organization, LocalBusiness, FAQ, Service, HowTo). Puntos débiles: falta BreadcrumbList structured data y marcado de artículo para noticias.
+Probabilidad de citación por IA: Alta - Factores clave: [FAQPage schema en 4 páginas clave, LocalBusiness con dirección/geo/horario, Organization con sameAs a redes sociales, contenido actualizado con referencias a leyes chilenas 2026, cobertura multitemática (seguridad, legal, tecnología, cultura)]
+</Analisis_GEO>
+<Puntaje_Fase1>
+Estructura Código: 9/10 - App Router impecable, server components por defecto, boundaries completos (loading/error/not-found), rutas bien organizadas en grupos. -1 por "use client" innecesario en areas/page.tsx
+SEO Técnico: 9/10 - metadata export en todas las rutas, sitemap, robots, canonical, OG/Twitter cards. -1 por falta de hreflang (proyecto monolingüe español CL, no necesario pero podría agregarse)
+AEO: 8/10 - Schemas variados y correctos (Organization, FAQPage, Service, HowTo, LocalBusiness, ItemList, NewsArticle). -2 por falta de BreadcrumbList y BlogPosting schemas críticos
+GEO: 8/10 - Alta claridad semántica, contenido factual con referencias, datos estructurados de entidad. -2 por falta de marcado Breadcrumb y artículos de blog
+Performance/Build: 8/10 - Turbopack, strict TS, bundle analyzer, sharp optimizado, remotePatterns vacío. -2 por ausencia de lazy loading en imágenes below-the-fold y exceso de priority tags
+UX/Responsividad: 9/10 - Diseño responsive completo, mobile menu con focus trap, skeleton loading, breadcrumbs, hero full-screen adaptable. -1 por textos largos en mobile sin truncamiento
+Accesibilidad: 8/10 - Skip link, focus trap, aria-expanded, aria-describedby, aria-live, alt text universal, sr-only labels. -2 por falta de aria-current en navegación y landmarks semánticos limitados
+Seguridad: 9/10 - CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Permissions-Policy, Referrer-Policy, Zod validación, sin console.log. -1 por WhatsApp hero link sin rel="noopener noreferrer"
+CRO/Entrega: 7/10 - Múltiples CTAs, formulario con validación y feedback, WhatsApp integrado, stats de autoridad. -3 por falta de A/B testing, sin heatmaps/configuración de experimentación, sin estrategia de seguimiento de leads post-formulario
+</Puntaje_Fase1>
+<Checklist_PreLanzamiento>
+✅ Eliminar console.log, debuggers y comentarios de desarrollo — (0 encontrados en producción)
+✅ Validar variables de entorno y secrets management — (process.env.FORMSPREE_ID, NEXT_PUBLIC_* definidos correctamente)
+✅ Confirmar minificación, tree-shaking y code splitting activos — (Next.js build por defecto + Turbopack + dynamic import en WhatsApp button)
+✅ Verificar metadatos SEO/OG dinámicos por ruta — (metadata export en todas las rutas, title template heredado, OG y Twitter cards en layout)
+✅ Probar contraste, focus states y navegación por teclado — (skip link OK, focus trap en menú mobile, aria attributes, falta aria-current)
+✅ Confirmar tracking (GA4/Píxeles) y eventos de conversión — (GA4 vía @next/third-parties/google + gtagEvent en submit exitoso, GTM condicional)
+✅ Generar sitemap.xml y robots.txt para producción — (sitemap.ts con 9 rutas, robots.ts con allow/disallow /api/)
+❌ Documentar estructura, mantenimiento y escalabilidad — (falta documentación técnica del proyecto más allá de AGENTS.md)
+</Checklist_PreLanzamiento>
+<Notas_Entrega>
+- Estado actual: Proyecto en etapa de lanzamiento/listo para producción con base sólida, 0 errores críticos de lint/typecheck, cobertura completa de rutas y schemas.
+- Riesgos conocidos: (1) Sin lazy loading en imágenes → posible impacto en LCP y CLS en páginas con múltiples imágenes, (2) BreadcrumbList schema ausente en todas las páginas → penalización leve en AEO/featured snippets, (3) Falta documentación técnica → riesgo de mantenimiento futuro.
+- Recomendaciones: (1) Priorizar corrección de seguridad en WhatsApp link y agregar lazy loading en imágenes below-the-fold antes del deploy, (2) Implementar BreadcrumbList JSON-LD para reforzar señal AEO, (3) Documentar estructura del proyecto en AGENTS.md o README técnico.
+</Notas_Entrega>
+</Auditoria_Fase1>

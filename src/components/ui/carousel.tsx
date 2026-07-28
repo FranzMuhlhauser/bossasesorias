@@ -111,14 +111,27 @@ const Carousel = React.forwardRef<
         return
       }
 
-      onSelect(api)
+      // Sincronizar estado inicial de forma diferida para evitar setState síncrono en effect
+      const initialSync = () => {
+        setCanScrollPrev(api.canScrollPrev())
+        setCanScrollNext(api.canScrollNext())
+      }
+      const frameId = requestAnimationFrame(initialSync)
+
+      const onSelect = () => {
+        setCanScrollPrev(api.canScrollPrev())
+        setCanScrollNext(api.canScrollNext())
+      }
+
       api.on("reInit", onSelect)
       api.on("select", onSelect)
 
       return () => {
+        cancelAnimationFrame(frameId)
         api?.off("select", onSelect)
+        api?.off("reInit", onSelect)
       }
-    }, [api, onSelect])
+    }, [api])
 
     return (
       <CarouselContext.Provider

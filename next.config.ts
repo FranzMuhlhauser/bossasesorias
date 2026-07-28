@@ -5,7 +5,6 @@ const isDev = process.env.NODE_ENV === 'development';
 // Bundle analyzer: activar con ANALYZE=true npm run build
 let withBundleAnalyzer = (config: NextConfig) => config;
 try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const analyzer = require('@next/bundle-analyzer');
   withBundleAnalyzer = analyzer({
     enabled: process.env.ANALYZE === 'true',

@@ -33,25 +33,25 @@
     {
       "id": "news-1",
       "description": "Equipo moderno trabajando eficientemente, representando la reducción de jornada a 42 horas en 2026.",
-      "imageUrl": "/images/news-40-hrs.png",
+      "imageUrl": "/images/news-40-hrs.webp",
       "imageHint": "office team 40 hours"
     },
     {
       "id": "news-2",
       "description": "Ambiente laboral de apoyo y respetuoso, simbolizando la prevención bajo la Ley Karin.",
-      "imageUrl": "/images/news-ley-karin.png",
+      "imageUrl": "/images/news-ley-karin.webp",
       "imageHint": "well-being supportive workplace"
     },
     {
       "id": "news-3",
       "description": "Escudo de ciberseguridad y flujos de datos digitales, representando la nueva Ley Marco de Ciberseguridad.",
-      "imageUrl": "/images/news-ciberseguridad.png",
+      "imageUrl": "/images/news-ciberseguridad.webp",
       "imageHint": "cybersecurity infrastructure"
     },
     {
       "id": "news-4",
       "description": "Profesional utilizando interfaces de IA, simbolizando la integración ética de la IA en la cultura organizacional.",
-      "imageUrl": "/images/news-ia-cultura.png",
+      "imageUrl": "/images/news-ia-cultura.webp",
       "imageHint": "ai culture ethics"
     }
   ]

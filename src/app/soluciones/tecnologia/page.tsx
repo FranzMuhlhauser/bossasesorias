@@ -85,11 +85,43 @@ export default function TecnologiaPage() {
     ]
   };
 
+  const faqTecnologiaJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué tipos de desarrollo web ofrecen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desarrollamos sitios web corporativos, tiendas e-commerce, landing pages y aplicaciones web progresivas (PWA), todos optimizados para rendimiento, SEO y experiencia de usuario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo integran inteligencia artificial en las empresas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implementamos chatbots inteligentes, automatización de procesos, análisis predictivo de datos y asistentes virtuales, adaptando cada solución a las necesidades específicas del negocio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué servicios de ciberseguridad ofrecen para empresas chilenas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofrecemos auditorías de seguridad, protección contra ransomware, respaldo y recuperación de datos, gestión de identidad digital, y cumplimiento con la Ley Marco de Ciberseguridad (Ley 21.663)."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
       <Script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <Script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <Script id="faq-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqTecnologiaJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/areatecnologica.webp"
@@ -133,7 +165,9 @@ export default function TecnologiaPage() {
                       data-ai-hint={serviceImage.imageHint}
                       width={800}
                       height={600}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="rounded-lg shadow-xl object-cover"
+                      loading="lazy"
                     />
                   </div>
                 )}

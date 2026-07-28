@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { DynamicWhatsappButton } from '@/components/dynamic-whatsapp-button';
+import { AnalyticsProvider } from '@/components/analytics-provider';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
@@ -56,6 +57,15 @@ export const metadata: Metadata = {
     title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
     images: ['/twitter-image.png'],
+  },    icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/images/logo_boss.webp', sizes: 'any', type: 'image/webp' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   robots: {
     index: true,
@@ -136,11 +146,13 @@ export default function RootLayout({
         >
           Saltar al contenido principal
         </a>
-        <Header />
-        <main id="main" className="pt-20 md:pt-20">{children}</main>
-        <Footer />
-        <DynamicWhatsappButton />
-        <Toaster />
+        <AnalyticsProvider>
+          <Header />
+          <main id="main" className="pt-20 md:pt-20">{children}</main>
+          <Footer />
+          <DynamicWhatsappButton />
+          <Toaster />
+        </AnalyticsProvider>
         {/* Google Analytics GA4 - usar `NEXT_PUBLIC_GA_ID` en entorno de producción */}
         {process.env.NEXT_PUBLIC_GA_ID ? (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />

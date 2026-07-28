@@ -143,13 +143,15 @@ export default function ContactPage() {
               </div>
               
               <div className="pt-4">
-                  <Image
-                      src="/images/contactoinicio.webp"
-                      alt="Equipo de BOSS Asesorías listo para atenderte"
-                      width={800}
-                      height={600}
-                      className="rounded-lg shadow-xl object-cover"
-                  />
+              <Image
+                  src="/images/contactoinicio.webp"
+                  alt="Equipo de BOSS Asesorías listo para atenderte"
+                  width={800}
+                  height={600}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-lg shadow-xl object-cover"
+                  loading="lazy"
+              />
               </div>
             </div>
 

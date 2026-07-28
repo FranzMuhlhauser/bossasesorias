@@ -7,6 +7,7 @@ import { ShieldCheck, Files, Cpu, Users, MapPin, Phone, Mail, CheckCircle, HelpC
 import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { StatsCounter } from '@/components/stats-counter';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -167,10 +168,11 @@ export default function Home() {
       "@type": "ListItem",
       "position": index + 1,
       "item": {
-        "@type": "NewsArticle",
+        "@type": "BlogPosting",
         "headline": item.title,
         "description": item.summary,
         "url": `https://www.bossasesorias.cl${item.link}`,
+        "image": `https://www.bossasesorias.cl${item.image?.imageUrl ?? ''}`,
         "author": {
           "@type": "Organization",
           "name": "BOSS Asesorías"
@@ -216,42 +218,21 @@ export default function Home() {
               <Link href="/contacto">Solicita una Asesoría Estratégica</Link>
             </Button>
             <Button asChild size="lg" className="w-full sm:w-auto bg-green-500 text-white hover:bg-green-600 border-green-500">
-              <Link href={whatsappUrl} target='_blank'>Hablar por WhatsApp</Link>
+              <Link href={whatsappUrl} target='_blank' rel='noopener noreferrer'>Hablar por WhatsApp</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Estadísticas — Autoridad GEO */}
-      <section className="py-16 bg-accent/10 border-y border-accent/20">
-        <div className="container mx-auto max-w-[1200px] px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="stats-counter space-y-1" style={{ animationDelay: '0ms' }}>
-              <span className="block text-3xl md:text-4xl font-bold text-accent">+50</span>
-              <span className="text-sm text-muted-foreground">Empresas asesoradas</span>
-            </div>
-            <div className="stats-counter space-y-1" style={{ animationDelay: '100ms' }}>
-              <span className="block text-3xl md:text-4xl font-bold text-accent">2019</span>
-              <span className="text-sm text-muted-foreground">Trayectoria ininterrumpida</span>
-            </div>
-            <div className="stats-counter space-y-1" style={{ animationDelay: '200ms' }}>
-              <span className="block text-3xl md:text-4xl font-bold text-accent">12+</span>
-              <span className="text-sm text-muted-foreground">Años de experiencia legal</span>
-            </div>
-            <div className="stats-counter space-y-1" style={{ animationDelay: '300ms' }}>
-              <span className="block text-3xl md:text-4xl font-bold text-accent">100%</span>
-              <span className="text-sm text-muted-foreground">Cobertura nacional</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StatsCounter />
 
       {/* ¿Por qué BOSS? */}
-      <section id="porque-boss" className="py-20 md:py-28 bg-background">
+      <section id="porque-boss" aria-labelledby="heading-porque-boss" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto max-w-[1200px] px-6">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-1">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Tu Aliado Estratégico en Transformación y Cuidado Empresarial</h2>
+                    <h2 id="heading-porque-boss" className="text-3xl md:text-4xl font-bold text-primary mb-6">Tu Aliado Estratégico en Transformación y Cuidado Empresarial</h2>
                     <div className="text-lg text-muted-foreground leading-relaxed mb-8 space-y-4">
                       <p>En BOSS ASESORÍAS integramos el Bienestar Laboral, la Gestión de Talento y la Tecnología para ofrecer una solución 360°. Desde 2019, hemos asesorado a empresas chilenas de diversos sectores, ayudándolas a cumplir normativas como la Ley de 40 Horas y la Ley Karin, y a fortalecer su cultura organizacional con resultados medibles.</p>
                     </div>
@@ -266,7 +247,9 @@ export default function Home() {
                             alt={whyBossImage.description}
                             width={800}
                             height={600}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="rounded-lg shadow-xl object-cover"
+                            loading="lazy"
                         />
                     )}
                 </div>
@@ -275,10 +258,10 @@ export default function Home() {
       </section>
 
       {/* Nuestros Ejes de Transformación */}
-      <section id="dimensiones" className="py-20 md:py-28 bg-card">
+      <section id="dimensiones" aria-labelledby="heading-dimensiones" className="py-20 md:py-28 bg-card">
         <div className="container mx-auto max-w-[1200px] px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">Nuestros Ejes de Transformación</h2>
+            <h2 id="heading-dimensiones" className="text-3xl md:text-4xl font-bold text-primary">Nuestros Ejes de Transformación</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
               Impulsamos el cambio a través de la seguridad, el talento y la innovación tecnológica.
             </p>
@@ -293,7 +276,9 @@ export default function Home() {
                             alt={dim.image.description}
                             width={600}
                             height={400}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-cover w-full h-48 transition-transform duration-300 group-hover:scale-110"
+                            loading="lazy"
                         />
                     </div>
                 )}
@@ -326,11 +311,11 @@ export default function Home() {
       </section>
 
       {/* Preguntas Frecuentes (AEO/SEO) */}
-      <section id="faq" className="py-20 md:py-28 bg-background">
+      <section id="faq" aria-labelledby="heading-faq" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto max-w-[800px] px-6">
           <div className="text-center mb-12">
             <HelpCircle className="h-12 w-12 text-accent mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">Preguntas Frecuentes</h2>
+            <h2 id="heading-faq" className="text-3xl md:text-4xl font-bold text-primary">Preguntas Frecuentes</h2>
             <p className="mt-4 text-muted-foreground">Resolvemos tus dudas sobre cómo podemos transformar tu organización.</p>
           </div>
           <Accordion type="single" collapsible className="w-full">
@@ -349,11 +334,11 @@ export default function Home() {
       </section>
 
       {/* Cultura y Desarrollo Organizacional */}
-      <section id="cultura" className="py-20 md:py-28 bg-muted/30">
+      <section id="cultura" aria-labelledby="heading-cultura" className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto max-w-[1200px] px-6">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div className="order-2 lg:order-2">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Cultura y Desarrollo: El Corazón de tu Empresa</h2>
+                    <h2 id="heading-cultura" className="text-3xl md:text-4xl font-bold text-primary mb-6">Cultura y Desarrollo: El Corazón de tu Empresa</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                       Intervenimos en la estructura y el clima de tu organización para potenciar el talento humano y asegurar resultados sostenibles.
                     </p>
@@ -373,7 +358,9 @@ export default function Home() {
                             alt={cultureImage.description}
                             width={800}
                             height={500}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className="rounded-lg shadow-xl object-cover"
+                            loading="lazy"
                         />
                     )}
                 </div>
@@ -382,10 +369,10 @@ export default function Home() {
       </section>
       
       {/* Noticias */}
-        <section id="noticias" className="py-20 md:py-28 bg-card">
+        <section id="noticias" aria-labelledby="heading-noticias" className="py-20 md:py-28 bg-card">
             <div className="container mx-auto max-w-[1200px] px-6">
                  <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary">Perspectivas y Actualidad</h2>
+                    <h2 id="heading-noticias" className="text-3xl md:text-4xl font-bold text-primary">Perspectivas y Actualidad</h2>
                     <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
                         Mantente informado sobre las tendencias que están redefiniendo el mundo empresarial en Chile.
                     </p>
@@ -400,7 +387,9 @@ export default function Home() {
                                         alt={item.image.description}
                                         width={400}
                                         height={300}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                         className="object-cover w-full h-56 transition-transform duration-300 group-hover:scale-110"
+                                        loading="lazy"
                                     />
                                 </div>
                             )}
@@ -430,10 +419,10 @@ export default function Home() {
         </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 md:py-28 bg-background">
+      <section id="contacto" aria-labelledby="heading-contacto" className="py-20 md:py-28 bg-background">
         <div className="container mx-auto max-w-[1200px] px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary">¿Listo para potenciar tu organización?</h2>
+            <h2 id="heading-contacto" className="text-3xl md:text-4xl font-bold text-primary">¿Listo para potenciar tu organización?</h2>
             <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
               Déjanos tu mensaje y un consultor experto te contactará para una asesoría estratégica.
             </p>
@@ -459,14 +448,15 @@ export default function Home() {
                 </div>
               </div>
                <div className="pt-4">
-                 <Image
-                    src="/images/contactoinicio.webp"
-                    alt="Equipo de BOSS Asesorías en la sección de contacto"
-                    width={800}
-                    height={500}
-                    className="rounded-lg shadow-md object-cover"
-                    priority
-                />
+         <Image
+            src="/images/contactoinicio.webp"
+            alt="Equipo de BOSS Asesorías en la sección de contacto"
+            width={800}
+            height={500}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="rounded-lg shadow-md object-cover"
+            loading="lazy"
+        />
                </div>
             </div>
             <div className="lg:col-span-3">

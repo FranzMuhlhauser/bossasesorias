@@ -97,11 +97,43 @@ export default function LegalPage() {
     ]
   };
 
+  const faqLegalJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué documentos se necesitan para la gestión de contratos laborales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se requiere el contrato de trabajo vigente, anexos, finiquitos anteriores, libreta de asistencia, y documentación de remuneraciones. Nosotros gestionamos toda la documentación y aseguramos su cumplimiento legal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo afecta la Ley de 40 Horas al cálculo de remuneraciones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La reducción a 42 horas semanales (2026) impacta el cálculo de sueldos, horas extras y turnos. Ajustamos los contratos y procesos de remuneraciones para cumplir con la ley sin afectar la productividad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye la administración de edificios y condominios?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Incluye gestión de gastos comunes, remuneraciones de personal, mantenimiento de instalaciones, certificaciones, planes de emergencia y asesoría legal para comités de administración."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
       <Script id="service-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <Script id="howto-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <Script id="faq-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLegalJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/gestion_legal.webp"
@@ -145,7 +177,9 @@ export default function LegalPage() {
                       data-ai-hint={serviceImage.imageHint}
                       width={800}
                       height={600}
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="rounded-lg shadow-xl object-cover"
+                      loading="lazy"
                     />
                   </div>
                 )}

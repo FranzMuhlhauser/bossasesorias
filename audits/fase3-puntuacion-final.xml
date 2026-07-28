@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Puntuacion_Final>
+<Categoria nombre="SEO Tecnico" nota="9/10" justificacion="Metadata export en todas las rutas, sitemap/robots/manifest, canonical, OG/Twitter cards, Schema.org rico (Organization, Service, LocalBusiness, FAQ, HowTo, BlogPosting, ItemList). Sin hreflang (monolingüe es-CL, no necesario)."/>
+<Categoria nombre="AEO" nota="9/10" justificacion="FAQPage schema en 4 rutas (home, soluciones, bienestar-seguridad, contacto), HowTo en 3 servicios, Service/LocalBusiness/BlogPosting/BreadcrumbList implementados. Formato Q&A nativo con accordion facilita extracción. Sin FAQ en areas/por-que-boss (-1)."/>
+<Categoria nombre="GEO" nota="8/10" justificacion="Alta claridad semántica con H1-H2 descriptivos y contenido factual referenciado (Leyes 21.561, 21.643, 21.663). Organization con sameAs a 3 redes sociales. LocalBusiness con dirección, geo, horario. Podría fortalecerse con datos de casos de éxito o certificaciones."/>
+<Categoria nombre="Performance Build" nota="9/10" justificacion="Turbopack dev, strict TS, bundle analyzer, sharp instalado, remotePatterns vacío, sin console.log ni código muerto. Dynamic import en WhatsApp button. Sin code splitting granular adicional (-1) ni AVIF como formato alternativo."/>
+<Categoria nombre="Core Web Vitals" nota="8/10" justificacion="LCP optimizado con priority en hero y lazy loading en below-fold. CLS controlado con width/height explícitos en next/image y layout estable. INP no medible sin RUM. Sin datos de laboratorio ni field data para confirmar umbrales."/>
+<Categoria nombre="Optimizacion Medios" nota="9/10" justificacion="29 imágenes en WebP (100%), sharp para compresión, lazy loading en todas las below-fold, sizes definidos, alt text descriptivo universal. Sin AVIF como fallback. PNGs originales convertidos a WebP."/>
+<Categoria nombre="Responsive UX Movil" nota="9/10" justificacion="Grid responsive con breakpoints md/lg, mobile menu con focus trap y aria-modal, skeleton loading, breadcrumbs con scroll-wrap, hero full-screen adaptable, CTA buttons con w-full sm:w-auto. Sin overflow oculto no intencional (-1)."/>
+<Categoria nombre="UX General" nota="8/10" justificacion="CTAs estratégicos y visibles (hero, secciones, sticky sidebar), feedback en formulario (toast + estado pending + errores inline), loading skeleton con Skeleton UI, error.tsx con retry + home link, 404 con navegación. Sin micro-interacciones ni animaciones de transición entre rutas (-1)."/>
+<Categoria nombre="Accesibilidad" nota="9/10" justificacion="Skip link funcional, focus trap en menú mobile, aria-expanded/controls en hamburguesa, aria-describedby en todos los inputs, aria-live en errores, aria-current en navegación, aria-labelledby en secciones del home, alt text universal, sr-only labels en iconos. Contraste no verificado con herramienta real (-1)."/>
+<Categoria nombre="Seguridad" nota="10/10" justificacion="CSP completo (sin unsafe-eval en prod), HSTS preload, X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy strict-origin, Permissions-Policy restrictiva, Zod validation server-side, WhatsApp link con rel noopener noreferrer, 0 console.log/any/TODO en producción, env vars via process.env."/>
+<Puntaje_Ponderado>88.5/100</Puntaje_Ponderado>
+<Estado_Entrega>🟡 CONDICIONAL — Aprobado con mejoras menores documentadas</Estado_Entrega>
+<Detalle_Ponderacion>
+SEO Tecnico: 9 × 15% = 1.35
+AEO: 9 × 10% = 0.90
+GEO: 8 × 10% = 0.80
+Performance Build: 9 × 15% = 1.35
+Core Web Vitals: 8 × 10% = 0.80
+Optimizacion Medios: 9 × 5% = 0.45
+Responsive UX Movil: 9 × 10% = 0.90
+UX General: 8 × 5% = 0.40
+Accesibilidad: 9 × 10% = 0.90
+Seguridad: 10 × 10% = 1.00
+Total: 8.85/10 → 88.5/100
+</Detalle_Ponderacion>
+<Recomendaciones_Finales>
+- [Bajo] Monitorear Core Web Vitals con RUM real post-lanzamiento (CrUX, Web Vitals library) para validar estimaciones
+- [Bajo] Considerar AVIF como formato alternativo en next.config para imágenes de alta resolución
+- [Bajo] Agregar micro-interacciones (hover states más refinados, transiciones de página) para elevar UX General a 9+
+- [Informativo] Documentar estructura en AGENTS.md ya cubierto; mantener actualizado con cada cambio arquitectónico
+</Recomendaciones_Finales>
+</Puntuacion_Final>

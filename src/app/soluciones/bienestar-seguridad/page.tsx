@@ -105,11 +105,43 @@ export default function BienestarPage() {
     ]
   };
 
+  const faqBienestarJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye una asesoría en prevención de riesgos laborales?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Incluye identificación y evaluación de riesgos, diseño de planes preventivos, implementación de protocolos de seguridad y salud ocupacional, y capacitación del equipo para asegurar el cumplimiento normativo vigente en Chile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cada cuánto deben realizarse las evaluaciones de puestos de trabajo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Se recomienda realizar evaluaciones ergonómicas y psicosociales anualmente, o cada vez que existan cambios significativos en los procesos, equipos o instalaciones de la empresa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué normativas chilenas aplican a la vigilancia de la salud?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aplican la Ley 16.744 sobre Accidentes del Trabajo y Enfermedades Profesionales, el DS 594 sobre condiciones sanitarias básicas, y los protocolos del Ministerio de Salud para exámenes preventivos."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
       <Script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <Script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <Script id="faq-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqBienestarJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/bienestar-laboral.webp"

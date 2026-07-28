@@ -108,7 +108,9 @@ export default function PorqueBossPage() {
                 alt="Entorno industrial moderno"
                 width={800}
                 height={600}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="rounded-lg shadow-xl object-cover"
+                loading="lazy"
               />
             </div>
           </div>
