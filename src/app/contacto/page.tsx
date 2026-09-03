@@ -7,9 +7,12 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Contacto BOSS Asesorías | Solicita una Asesoría Estratégica Personalizada',
+  title: 'Contacto BOSS Asesorías | Solicita Asesoría Estratégica',
   description: 'Contáctanos para una asesoría estratégica inicial. Nuestro equipo de consultores en Chile está listo para ayudarte con soluciones en bienestar laboral, gestión legal y tecnología.',
   keywords: ['contacto asesorías chile', 'asesoría estratégica empresas', 'consultora empresarial chile', 'asesoría integral empresas'],
+  alternates: {
+    canonical: '/contacto',
+  },
 };
 
 const breadcrumbItems = [

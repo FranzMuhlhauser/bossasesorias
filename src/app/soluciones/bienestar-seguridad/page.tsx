@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Bienestar Laboral y Seguridad | Prevención de Riesgos y Salud Ocupacional',
   description: 'Protegemos a tus trabajadores con prevención de riesgos, evaluaciones, auditorías y salud ocupacional.',
   keywords: ['prevención de riesgos chile', 'salud ocupacional servicios', 'evaluaciones de puestos de trabajo', 'protocolos de salud mental', 'auditorías de seguridad laboral', 'vigilancia de la salud chile'],
+  alternates: {
+    canonical: '/soluciones/bienestar-seguridad',
+  },
 };
 
 const servicios = [

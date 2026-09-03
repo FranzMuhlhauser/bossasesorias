@@ -1,10 +1,50 @@
 import Image from 'next/image';
+import { Metadata } from 'next';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Factory, Briefcase, Cpu, TrendingUp, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Breadcrumb } from '@/components/breadcrumb';
+import Script from 'next/script';
+import { HelpCircle } from 'lucide-react';
+
+const faqsAreas = [
+  {
+    question: '¿Cómo determinan qué área necesita mi empresa?',
+    answer: 'Realizamos un diagnóstico integral que evalúa seguridad, cumplimiento legal, tecnología y cultura organizacional. Con base en los resultados, priorizamos las áreas con mayor impacto para tu negocio.',
+  },
+  {
+    question: '¿Puedo contratar solo una área de servicio?',
+    answer: 'Sí, cada área es independiente. Sin embargo, nuestro enfoque 360° permite que las áreas se complementen para obtener mejores resultados a largo plazo.',
+  },
+  {
+    question: '¿En qué sectores tienen experiencia?',
+    answer: 'Trabajamos con empresas de los sectores industrial, legal, tecnológico y de servicios. Nuestro enfoque multidisciplinario nos permite adaptarnos a cualquier industria en Chile.',
+  },
+];
+
+const faqAreasJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqsAreas.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
+export const metadata: Metadata = {
+  title: 'Áreas de Especialización | Industrial, Legal, Tech y Cultura',
+  description: 'Conoce nuestras 4 áreas de especialización: seguridad industrial, gestión legal, tecnología digital y cultura organizacional para empresas en Chile.',
+  keywords: ['áreas especialización empresas', 'consultoría industrial chile', 'gestión legal empresas', 'tecnología empresarial', 'cultura organizacional'],
+  alternates: {
+    canonical: '/empresa/areas',
+  },
+};
 
 const areas = [
   {
@@ -48,6 +88,7 @@ export default function AreasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
+      <Script id="faq-areas-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqAreasJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-administrativa.webp"
@@ -92,6 +133,29 @@ export default function AreasPage() {
                     </div>
                   </AccordionContent>
                 </Card>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" aria-labelledby="heading-faq" className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto max-w-[800px] px-6">
+          <div className="text-center mb-12">
+            <HelpCircle className="h-12 w-12 text-accent mx-auto mb-4" />
+            <h2 id="heading-faq" className="text-3xl md:text-4xl font-bold text-primary">Preguntas Frecuentes</h2>
+            <p className="mt-4 text-muted-foreground">Resolvemos tus dudas sobre nuestras áreas de especialización.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqsAreas.map((faq, index) => (
+              <AccordionItem value={`faq-${index}`} key={index}>
+                <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

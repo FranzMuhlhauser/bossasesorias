@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'Gestión Legal y Administrativa | Remuneraciones, Contratos y Cumplimiento',
   description: 'Optimiza tu empresa con servicios legales, remuneraciones, contratos, impuestos y administración documental.',
   keywords: ['gestión legal laboral chile', 'cálculo de remuneraciones', 'contratos laborales chile', 'administración de condominios', 'servicios contables chile', 'cumplimiento normativo empresas'],
+  alternates: {
+    canonical: '/soluciones/gestion-legal',
+  },
 };
 
 const serviceImage = PlaceHolderImages.find(p => p.id === 'dimension-legal');

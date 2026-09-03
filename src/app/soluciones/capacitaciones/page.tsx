@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'Cultura y Desarrollo Organizacional | Consultoría en Talento y Cambio',
   description: 'Fortalece el ADN de tu empresa con diagnósticos de clima, gestión del cambio, liderazgo y desarrollo organizacional.',
   keywords: ['cultura organizacional chile', 'clima laboral consultoría', 'gestión del cambio empresas', 'coaching ejecutivo chile', 'desarrollo de talento humano'],
+  alternates: {
+    canonical: '/soluciones/capacitaciones',
+  },
 };
 
 const serviceImage = PlaceHolderImages.find(p => p.id === 'courses-training');
@@ -87,7 +90,7 @@ export default function CulturaPage() {
       <Script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
-          src="/images/Curso-Capacitacion-en-Tecnologia-Digital-para-un-Aprendizaje-Efectivo.webp"
+          src="/images/curso-capacitacion-tecnologia-digital.webp"
           alt="Liderazgo y cultura organizacional"
           fill
           className="object-cover"

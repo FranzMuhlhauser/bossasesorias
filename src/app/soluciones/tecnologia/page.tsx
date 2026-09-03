@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: 'Soluciones Tecnológicas Empresariales | Desarrollo Web, IA y Soporte Técnico',
   description: 'Impulsa tu empresa con desarrollo web, aplicaciones, IA, soporte técnico y recuperación de datos.',
   keywords: ['desarrollo web chile', 'soporte técnico empresas', 'integración de inteligencia artificial', 'desarrollo de aplicaciones chile', 'community manager chile', 'recuperación de datos empresas'],
+  alternates: {
+    canonical: '/soluciones/tecnologia',
+  },
 };
 
 const serviceImage = PlaceHolderImages.find(p => p.id === 'dimension-tech');

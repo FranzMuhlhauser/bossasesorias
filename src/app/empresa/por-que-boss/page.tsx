@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ShieldCheck, Files, Cpu, Info } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { HelpCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import Script from 'next/script';
 import type { Metadata } from 'next';
@@ -11,6 +13,9 @@ export const metadata: Metadata = {
   title: '¿Por qué BOSS Asesorías? | Consultoría Estratégica 360° en Chile',
   description: 'Conoce la historia y el propósito de BOSS Asesorías. Bienestar, Organización, Salud y Seguridad — los pilares de nuestra consultoría integral para empresas en Chile.',
   keywords: ['por qué boss asesorías', 'consultoría estratégica chile', 'transformación organizacional', 'pilares boss', 'bienestar organización salud seguridad'],
+  alternates: {
+    canonical: '/empresa/por-que-boss',
+  },
 };
 
 
@@ -58,10 +63,39 @@ export default function PorqueBossPage() {
     }
   };
 
+  const faqsPorqueBoss = [
+    {
+      question: '¿Qué significa BOSS en BOSS Asesorías?',
+      answer: 'BOSS es el acrónimo de Bienestar, Organización, Salud y Seguridad. Representa los cuatro pilares fundamentales que guían nuestra consultoría integral para empresas en Chile.',
+    },
+    {
+      question: '¿Desde cuándo trabajan con empresas chilenas?',
+      answer: 'Desde 2019 hemos asesorado a empresas de diversos sectores en Chile, ayudándolas a cumplir normativas como la Ley de 40 Horas, la Ley Karin y la Ley Marco de Ciberseguridad.',
+    },
+    {
+      question: '¿Cuál es el enfoque integral de BOSS Asesorías?',
+      answer: 'Integramos bienestar laboral, gestión estratégica y tecnología para transformar organizaciones. Cada área refuerza a las demás, impulsando un ciclo continuo de mejora y resultados sostenibles.',
+    },
+  ];
+
+  const faqPorqueBossJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsPorqueBoss.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
       <Script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
+      <Script id="faq-porque-boss-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPorqueBossJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-industrial.webp"
@@ -114,6 +148,29 @@ export default function PorqueBossPage() {
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" aria-labelledby="heading-faq" className="py-20 md:py-28 bg-muted/30">
+        <div className="container mx-auto max-w-[800px] px-6">
+          <div className="text-center mb-12">
+            <HelpCircle className="h-12 w-12 text-accent mx-auto mb-4" />
+            <h2 id="heading-faq" className="text-3xl md:text-4xl font-bold text-primary">Preguntas Frecuentes</h2>
+            <p className="mt-4 text-muted-foreground">Resolvemos tus dudas sobre nuestra consultoría integral.</p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqsPorqueBoss.map((faq, index) => (
+              <AccordionItem value={`faq-${index}`} key={index}>
+                <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </>

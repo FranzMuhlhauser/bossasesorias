@@ -91,7 +91,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "BOSS Asesorías",
     "url": "https://www.bossasesorias.cl",
-    "logo": "https://www.bossasesorias.cl/icon.png",
+    "logo": "https://www.bossasesorias.cl/images/logo_boss.webp",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+56-9-9289-5726",

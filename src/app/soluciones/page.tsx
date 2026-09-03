@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     title: 'Soluciones Empresariales Integrales | Bienestar, Gestión Legal y Cultura Organizacional',
     description: 'Explora nuestros servicios en seguridad laboral, gestión legal, tecnología y desarrollo de cultura organizacional en Chile.',
     keywords: ['servicios empresariales chile', 'asesoría en prevención de riesgos', 'servicios legales laborales', 'soluciones tecnológicas empresas chile', 'consultoría integral empresarial', 'cultura organizacional chile'],
+    alternates: {
+      canonical: '/soluciones',
+    },
 };
 
 const bienestarServicios = [
