@@ -1,0 +1,26 @@
+# BOSS Asesorías
+
+> Consultoría integral en bienestar laboral, gestión legal y soluciones tecnológicas para empresas en Chile. Transformamos organizaciones protegiendo equipos, optimizando procesos y fortaleciendo la cultura empresarial.
+
+## Servicios
+
+- [Bienestar Laboral y Seguridad Ocupacional](/soluciones/bienestar-seguridad): Evaluaciones ergonómicas, protocolos de salud mental, auditorías de gestión y vigilancia de la salud.
+- [Gestión Legal y Administrativa](/soluciones/gestion-legal): Contratos, remuneraciones, finiquitos, planificación tributaria y administración de activos.
+- [Soluciones Tecnológicas Estratégicas](/soluciones/tecnologia): Desarrollo web, integración de IA, soporte técnico, recuperación de datos y ciberseguridad.
+- [Cultura y Desarrollo Organizacional](/soluciones/capacitaciones): Diagnóstico de clima, gestión del cambio, coaching de liderazgo y evaluación 360°.
+
+## Empresa
+
+- [Sobre BOSS Asesorías](/empresa/por-que-boss): Nuestra historia, metodología y compromiso con la transformación empresarial en Chile.
+- [Nuestras Áreas de Especialización](/empresa/areas): Conoce los ejes estratégicos que integran bienestar, legalidad y tecnología.
+
+## Blog
+
+- [Ley de 40 Horas en Chile 2026](/blog/ley-40-horas): Guía completa sobre implementación, plazos y cumplimiento de la Ley 21.561.
+- [Ley Karin: Obligaciones para Empresas](/blog/ley-karin): Protocolos de salud mental y prevención de acoso laboral según la Ley 21.643.
+- [Ciberseguridad en Chile 2026](/blog/ciberseguridad-chile): Ley Marco 21.663, obligaciones y protección contra ransomware.
+- [IA y Cultura Organizacional](/blog/ia-cultura-organizacional): Cómo integrar inteligencia artificial en la cultura empresarial.
+
+## Contacto
+
+- [Contacto](/contacto): Formulario de contacto para asesorías estratégicas personalizadas.

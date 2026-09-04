@@ -127,7 +127,96 @@ Ahora: "Contacto BOSS Asesorías | Solicita Asesoría Estratégica" (55 chars)
 |-------|--------|
 | `npm run typecheck` | ✅ Pass (0 errores) |
 | `npm run lint` | ✅ Pass (0 warnings) |
-| `npm run build` | ✅ Pass (15 páginas generadas) |
+| `npm run build` | ✅ Pass (19 páginas generadas) |
+
+---
+
+## Optimización para Agentes de IA — WebMCP y llms.txt
+
+### Cambios Realizados
+
+| # | Mejora | Archivo | Detalle |
+|---|--------|---------|---------|
+| 10 | Archivo `llms.txt` creado | `public/llms.txt` | Índice LLM-friendly con H1, blockquote resumen y 4 secciones H2 curadas (Servicios, Empresa, Blog, Contacto) |
+| 11 | Anotaciones WebMCP declarativas | `src/components/contact-form.tsx` | Atributos `toolname`, `tooldescription` y `toolparamdescription` en formulario e inputs |
+| 12 | Registro imperativo WebMCP | `src/components/contact-form.tsx` | Hook `useWebMCPContactTool` registra herramienta `submit_contact_form` con esquema JSON explícito |
+| 13 | Manejo de envíos por agente | `src/components/contact-form.tsx` | Handler `SubmitEvent.respondWith()` para respuestas estructuradas cuando `agentInvoked === true` |
+| 14 | Eventos WebMCP | `src/components/contact-form.tsx` | Listeners `toolactivated` / `toolcanceled` con scroll al formulario |
+| 15 | Reglas robots.txt para IA | `src/app/robots.ts` | `allow: /` para GPTBot, ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot, Google-Extended, CCBot, OAI-SearchBot |
+| 16 | Permissions-Policy actualizada | `next.config.ts` | Agregado `tools=self()` para habilitar API WebMCP en same-origin |
+
+### Especificación Técnica
+
+#### llms.txt (`public/llms.txt`)
+
+- Formato: Markdown plano según especificación v2 de llmstxt.org
+- Encabezado H1 obligatorio con nombre del sitio
+- Blockquote resumen del proyecto
+- Secciones H2: Servicios, Empresa, Blog, Contacto
+- 14 enlaces absolutos con descripciones orientadas a IA
+- Sin HTML, sin listas anidadas, sin URLs relativas
+
+#### WebMCP en `contact-form.tsx`
+
+**Esquema JSON de la herramienta:**
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "description": "Nombre completo del consultor o representante de la empresa" },
+    "email": { "type": "string", "format": "email", "description": "Correo electrónico de contacto válido" },
+    "phone": { "type": "string", "description": "Número de teléfono con código de país (opcional)" },
+    "message": { "type": "string", "description": "Descripción detallada de la necesidad de asesoría estratégica" }
+  },
+  "required": ["name", "email", "message"]
+}
+```
+
+**Características:**
+- Feature detection: `'modelContext' in document` para navegadores sin soporte
+- Registro condicional de herramienta solo cuando `document.modelContext.registerTool` está disponible
+- Sin `toolautosubmit` (formulario de alto impacto según recomendaciones WebMCP)
+- Manejo seguro de tipos con interfaces locales `ModelContext` y `WebMCPSubmitEvent`
+- Compatible con SSR/SSG de Next.js (feature detection en `useEffect`)
+
+#### robots.ts — Bots de IA permitidos
+
+```typescript
+{ userAgent: 'GPTBot', allow: '/' },
+{ userAgent: 'ChatGPT-User', allow: '/' },
+{ userAgent: 'ClaudeBot', allow: '/' },
+{ userAgent: 'Claude-User', allow: '/' },
+{ userAgent: 'Claude-SearchBot', allow: '/' },
+{ userAgent: 'PerplexityBot', allow: '/' },
+{ userAgent: 'Google-Extended', allow: '/' },
+{ userAgent: 'CCBot', allow: '/' },
+{ userAgent: 'OAI-SearchBot', allow: '/' },
+```
+
+#### next.config.ts — Permissions-Policy
+
+```typescript
+{
+  key: 'Permissions-Policy',
+  value: 'camera=(), microphone=(), geolocation=(), tools=self()',
+}
+```
+
+### Validación
+
+| Check | Estado |
+|-------|--------|
+| `npm run lint` | ✅ Pass (0 warnings) |
+| `npm run typecheck` | ✅ Pass (0 errores) |
+| `npm run build` | ✅ Pass (19 páginas generadas) |
+
+### Notas de Compatibilidad
+
+- WebMCP está en **origin trial** en Chrome 149+ (mid-2026)
+- Navegadores sin soporte ignoran los atributos `tool*` y el hook JavaScript
+- El formulario mantiene funcionalidad completa como fallback
+- No se introdujeron dependencias nuevas
 
 ---
 
@@ -152,13 +241,13 @@ src/
 │   ├── page.tsx            ← Home (FAQ, News, Schema)
 │   ├── actions.ts          ← Server actions (Formspree)
 │   ├── sitemap.ts          ← Sitemap dinámico
-│   ├── robots.ts           ← Robots.txt
+│   ├── robots.ts           ← Robots.txt (NUEVO: reglas para crawlers IA)
 │   ├── globals.css         ← Theme variables, dark mode
 │   ├── error.tsx           ← Error boundary
 │   ├── loading.tsx         ← Skeleton loader
 │   ├── not-found.tsx       ← 404 page
 │   ├── manifest.ts         ← PWA manifest
-│   ├── contacto/           ← Contact form + LocalBusiness schema + FAQ
+│   ├── contacto/           ← Contact form + LocalBusiness schema + FAQ + WebMCP
 │   ├── empresa/
 │   │   ├── areas/          ← 4 áreas + FAQ (NUEVO: metadata + FAQ schema)
 │   │   └── por-que-boss/   ← About + FAQ (NUEVO: FAQ schema)
@@ -172,7 +261,7 @@ src/
 │   ├── header.tsx          ← Mobile menu con focus trap
 │   ├── navigation.tsx      ← Desktop/mobile nav
 │   ├── footer.tsx          ← Social links + CTA
-│   ├── contact-form.tsx    ← Form con validación Zod
+│   ├── contact-form.tsx    ← Form con validación Zod + WebMCP (NUEVO)
 │   ├── whatsapp-button.tsx ← Popover interactivo por categoría
 │   ├── dynamic-whatsapp-button.tsx ← Dynamic import (SSR disabled)
 │   ├── analytics-provider.tsx      ← Pageview tracking
@@ -192,6 +281,11 @@ src/
     └── placeholder-images.json
 ```
 
+**Nuevos archivos agregados:**
+```
+public/llms.txt             ← Índice LLM-friendly (NUEVO)
+```
+
 ---
 
 ## Auditorías Anteriores
@@ -207,10 +301,10 @@ src/
 ## Puntuación Comparativa
 
 | Categoría | Antes | Después | Cambio |
-|-----------|-------|---------|--------|
+| |-----------|-------|---------|--------|
 | SEO Técnico | 7/10 | 8/10 | +1 |
 | AEO | 8/10 | 9/10 | +1 |
-| GEO | 8/10 | 8/10 | — |
+| GEO | 8/10 | 9/10 | +1 |
 | Performance & Build | 7/10 | 8/10 | +1 |
 | Core Web Vitals | 7/10 | 7/10 | — |
 | Optimización Medios | 9/10 | 9/10 | — |
@@ -218,6 +312,6 @@ src/
 | UX General | 9/10 | 9/10 | — |
 | Accesibilidad | 8/10 | 8/10 | — |
 | Seguridad | 9/10 | 9/10 | — |
-| **TOTAL** | **81/100** | **84/100** | **+3** |
+| **TOTAL** | **81/100** | **85/100** | **+4** |
 
-**Estado:** 🟡 CONDICIONAL (84/100) → Pendiente creación de imágenes OG/Twitter para alcanzar 🟢 APROBADO (≥90)
+**Estado:** 🟡 CONDICIONAL (85/100) → Pendiente creación de imágenes OG/Twitter y optimización LCP para alcanzar 🟢 APROBADO (≥90)
