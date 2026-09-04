@@ -1,26 +1,27 @@
 # BOSS Asesorías
 
-> Consultoría integral en bienestar laboral, gestión legal y soluciones tecnológicas para empresas en Chile. Transformamos organizaciones protegiendo equipos, optimizando procesos y fortaleciendo la cultura empresarial.
+> BOSS Asesorías es una consultora chilena que ofrece soluciones integrales en bienestar laboral y seguridad, gestión legal y administrativa, cultura organizacional y tecnología para empresas. Este archivo sirve de índice para modelos de lenguaje: cada sección agrupa las páginas del sitio por tema y cada enlace apunta a una página pública con contenido detallado en español (es-CL) que puede leerse o usarse con fines de entrenamiento.
 
 ## Servicios
 
-- [Bienestar Laboral y Seguridad Ocupacional](/soluciones/bienestar-seguridad): Evaluaciones ergonómicas, protocolos de salud mental, auditorías de gestión y vigilancia de la salud.
-- [Gestión Legal y Administrativa](/soluciones/gestion-legal): Contratos, remuneraciones, finiquitos, planificación tributaria y administración de activos.
-- [Soluciones Tecnológicas Estratégicas](/soluciones/tecnologia): Desarrollo web, integración de IA, soporte técnico, recuperación de datos y ciberseguridad.
-- [Cultura y Desarrollo Organizacional](/soluciones/capacitaciones): Diagnóstico de clima, gestión del cambio, coaching de liderazgo y evaluación 360°.
+- [Servicios Empresariales Integrales](https://www.bossasesorias.cl/soluciones): Panorama de las soluciones de BOSS: bienestar, gestión legal, tecnología y capacitaciones.
+- [Bienestar Laboral y Seguridad Ocupacional](https://www.bossasesorias.cl/soluciones/bienestar-seguridad): Evaluaciones ergonómicas, protocolos de salud mental, auditorías de gestión y vigilancia de la salud.
+- [Gestión Legal y Administrativa](https://www.bossasesorias.cl/soluciones/gestion-legal): Contratos, remuneraciones, finiquitos, planificación tributaria y administración de activos.
+- [Soluciones Tecnológicas Estratégicas](https://www.bossasesorias.cl/soluciones/tecnologia): Desarrollo web, integración de IA, soporte técnico, recuperación de datos y ciberseguridad.
+- [Cultura y Desarrollo Organizacional](https://www.bossasesorias.cl/soluciones/capacitaciones): Diagnóstico de clima, gestión del cambio, coaching de liderazgo y evaluación 360°.
 
 ## Empresa
 
-- [Sobre BOSS Asesorías](/empresa/por-que-boss): Nuestra historia, metodología y compromiso con la transformación empresarial en Chile.
-- [Nuestras Áreas de Especialización](/empresa/areas): Conoce los ejes estratégicos que integran bienestar, legalidad y tecnología.
+- [Sobre BOSS Asesorías](https://www.bossasesorias.cl/empresa/por-que-boss): Historia, metodología y compromiso con la transformación empresarial en Chile.
+- [Áreas de Especialización](https://www.bossasesorias.cl/empresa/areas): Ejes estratégicos que integran bienestar, legalidad y tecnología.
 
 ## Blog
 
-- [Ley de 40 Horas en Chile 2026](/blog/ley-40-horas): Guía completa sobre implementación, plazos y cumplimiento de la Ley 21.561.
-- [Ley Karin: Obligaciones para Empresas](/blog/ley-karin): Protocolos de salud mental y prevención de acoso laboral según la Ley 21.643.
-- [Ciberseguridad en Chile 2026](/blog/ciberseguridad-chile): Ley Marco 21.663, obligaciones y protección contra ransomware.
-- [IA y Cultura Organizacional](/blog/ia-cultura-organizacional): Cómo integrar inteligencia artificial en la cultura empresarial.
+- [Ley de 40 Horas en Chile 2026](https://www.bossasesorias.cl/blog/ley-40-horas): Guía completa sobre implementación, plazos y cumplimiento de la Ley 21.561.
+- [Ley Karin: Obligaciones para Empresas](https://www.bossasesorias.cl/blog/ley-karin): Protocolos de salud mental y prevención de acoso laboral según la Ley 21.643.
+- [Ciberseguridad en Chile 2026](https://www.bossasesorias.cl/blog/ciberseguridad-chile): Ley Marco 21.663, obligaciones empresariales y protección contra ransomware.
+- [IA y Cultura Organizacional](https://www.bossasesorias.cl/blog/ia-cultura-organizacional): Cómo integrar inteligencia artificial en la cultura y el trabajo.
 
 ## Contacto
 
-- [Contacto](/contacto): Formulario de contacto para asesorías estratégicas personalizadas.
+- [Contacto](https://www.bossasesorias.cl/contacto): Formulario para solicitar asesorías estratégicas personalizadas.
