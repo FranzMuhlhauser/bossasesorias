@@ -88,55 +88,47 @@ const culturaServicios = [
 
 const news = [
     {
-        title: "Ley de 40 horas en Chile 2026: ¿Cómo implementar las 42 horas semanales?",
-        summary: "La jornada laboral en Chile bajó a 42 horas semanales en 2026. La Dirección del Trabajo exige que la implementación quede bien acordada y respaldada por escrito. Revisa contratos, turnos y remuneraciones para cumplir correctamente con la norma.",
+        title: "Ley de 40 Horas en Chile 2026: Cómo Implementar las 42 Horas",
+        summary: "Guía completa sobre la Ley 21.561: plazos, requisitos, impacto en remuneraciones y cómo preparar tu empresa para la reducción a 42 horas semanales.",
         image: newsImages['news-1'],
-        link: "/soluciones/gestion-legal",
-        sourceLabel: "Ver artículo completo →",
-        sourceHref: "https://softland.com/cl/ley-de-40-horas-en-chile-2026/",
+        link: "/blog/ley-40-horas",
     },
     {
-        title: "Mes de la Seguridad y Salud en el Trabajo 2026",
-        summary: "El Instituto de Seguridad Laboral impulsó en abril el Mes de la Seguridad y Salud en el Trabajo 2026, con foco en ambientes laborales seguros, saludables y en el entorno psicosocial. La gestión preventiva y la salud ocupacional siguen siendo prioridades en Chile.",
+        title: "Ley Karin: Obligaciones para Empresas en Chile",
+        summary: "Todo lo que necesitas saber sobre la Ley 21.643: protocolos de salud mental, prevención de acoso laboral y obligaciones para empresas chilenas.",
         image: newsImages['news-2'],
-        link: "/soluciones/bienestar-seguridad",
-        sourceLabel: "Ver artículo completo →",
-        sourceHref: "https://www.isl.gob.cl/mes-de-la-seguridad-y-salud-en-el-trabajo/",
+        link: "/blog/ley-karin",
     },
     {
-        title: "Ciberseguridad en Chile 2026: cuando dejará de ser opcional",
-        summary: "La ciberseguridad dejó de ser opcional para las empresas chilenas. El aumento de ataques ransomware y las nuevas exigencias regulatorias exigen reforzar prevención, respuesta a incidentes y cumplimiento normativo para evitar interrupciones y sanciones.",
+        title: "Ciberseguridad en Chile 2026: Ley Marco y Obligaciones",
+        summary: "La Ley 21.663 obliga a implementar planes de seguridad y reportar incidentes. Conoce cómo proteger tu empresa de ataques ransomware.",
         image: newsImages['news-3'],
-        link: "/soluciones/tecnologia",
-        sourceLabel: "Ver artículo completo →",
-        sourceHref: "https://www.pwc.com/cl/es/Sala-de-prensa/columnas-de-opinion/2026-el-ano-en-que-la-ciberseguridad-dejo-de-ser-opcional.html",
+        link: "/blog/ciberseguridad-chile",
     },
     {
-        title: "Seguridad y salud laboral: nuevas normas y convenios internacionales",
-        summary: "Chile continúa fortaleciendo su marco de seguridad y salud laboral con nuevas actualizaciones normativas y la promulgación de convenios internacionales. Más énfasis en protocolos, capacitación y control de riesgos en los puestos de trabajo.",
+        title: "IA y Cultura Organizacional: Cómo Transformar tu Empresa",
+        summary: "Cómo integrar inteligencia artificial en la cultura de tu empresa. Beneficios medibles y casos de éxito en Chile.",
         image: newsImages['news-4'],
-        link: "/soluciones/bienestar-seguridad",
-        sourceLabel: "Ver norma oficial →",
-        sourceHref: "https://www.bcn.cl/leychile/navegar?idNorma=1222695",
+        link: "/blog/ia-cultura-organizacional",
     }
 ];
 
 const faqs = [
   {
     question: "¿En qué consiste la asesoría estratégica inicial?",
-    answer: "Es una evaluación gratuita donde analizamos tu situación actual en seguridad, cumplimiento legal, tecnología y cultura. Identificamos brechas críticas y trazamos una hoja de ruta personalizada para potenciar tu competitividad."
+    answer: "Es una evaluación gratuita de 48 horas donde analizamos tu empresa en seguridad, cumplimiento legal, tecnología y cultura. Identificamos brechas críticas y trazamos una hoja de ruta personalizada para potenciar tu competitividad."
   },
   {
-    question: "¿Cómo ayuda BOSS Asesorías en el cumplimiento de la Ley de 40 Horas?",
-    answer: "Ajustamos contratos, optimizamos turnos y actualizamos tus procesos de remuneraciones para cumplir con las 42 horas semanales, manteniendo la productividad de tu equipo y evitando multas."
+    question: "¿Cómo ayuda BOSS Asesorías con la Ley de 40 Horas?",
+    answer: "Ajustamos contratos, optimizamos turnos y recalculamos remuneraciones para cumplir con las 42 horas semanales sin afectar productividad. Documentamos todo para respaldar la implementación ante la Dirección del Trabajo."
   },
   {
-    question: "¿Qué alcance tiene su soporte tecnológico?",
-    answer: "Cubrimos desde soporte técnico y desarrollo web a medida hasta integración de IA y auditorías de ciberseguridad. Aseguramos que la tecnología sea un motor de crecimiento, no un riesgo."
+    question: "¿Qué incluye el soporte tecnológico?",
+    answer: "Desarrollo web a medida, integración de IA, soporte técnico remoto, recuperación de datos y auditorías de ciberseguridad bajo la Ley 21.663. La tecnología se convierte en ventaja competitiva, no en riesgo."
   },
   {
     question: "¿Cómo impacta la gestión de cultura en mis resultados?",
-    answer: "Una cultura sólida reduce la rotación, aumenta el compromiso y mejora la productividad. Intervenimos en el clima laboral para alinear el talento humano con los objetivos estratégicos de tu empresa."
+    answer: "Una cultura sólida reduce la rotación hasta en un 30% y mejora la productividad. Diagnosticamos el clima laboral, implementamos planes de cambio y medimos resultados para asegurar el impacto en tu negocio."
   }
 ];
 
@@ -161,8 +153,8 @@ export default function Home() {
   const newsJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Perspectivas y Actualidad - BOSS Asesorías",
-    "description": "Mantente informado sobre las tendencias que están redefiniendo el mundo empresarial en Chile.",
+    "name": "Blog - BOSS Asesorías",
+    "description": "Artículos sobre bienestar laboral, gestión legal, ciberseguridad y transformación digital para empresas en Chile.",
     "numberOfItems": news.length,
     "itemListElement": news.map((item, index) => ({
       "@type": "ListItem",
@@ -396,20 +388,10 @@ export default function Home() {
                             <CardContent className="flex flex-col flex-grow p-6">
                                 <h3 className="text-xl font-semibold text-primary mb-3 flex-grow">{item.title}</h3>
                                 <p className="text-muted-foreground mb-4 text-sm">{item.summary}</p>
-                                <div className="flex flex-col gap-2 mt-auto">
+                                <div className="mt-auto">
                                   <Button asChild variant="link" className="text-accent font-semibold p-0 self-start">
-                                    <Link href={item.link}>Conocer la solución &rarr;</Link>
+                                    <Link href={item.link}>Leer artículo completo →</Link>
                                   </Button>
-                                  {item.sourceHref && item.sourceLabel && (
-                                    <a
-                                      href={item.sourceHref}
-                                      target="_blank"
-                                      rel="nofollow noopener noreferrer"
-                                      className="text-xs text-muted-foreground hover:text-accent transition-colors"
-                                    >
-                                      {item.sourceLabel}
-                                    </a>
-                                  )}
                                 </div>
                             </CardContent>
                         </Card>

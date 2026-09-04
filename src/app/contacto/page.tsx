@@ -25,10 +25,13 @@ export default function ContactPage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BOSS Asesorías",
-    "image": "https://www.bossasesorias.cl/images/contacto.webp",
+    "image": "https://www.bossasesorias.cl/images/logo_boss.webp",
     "@id": "https://www.bossasesorias.cl",
     "url": "https://www.bossasesorias.cl",
     "telephone": "+56992895726",
+    "email": "contacto@bossasesorias.cl",
+    "description": "Consultoría integral en bienestar laboral, gestión legal y soluciones tecnológicas para empresas en Chile.",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "13 Norte 853, Of. 803",
@@ -53,6 +56,49 @@ export default function ContactPage() {
       ],
       "opens": "09:00",
       "closes": "18:00"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Chile"
+    },
+    "sameAs": [
+      "https://www.facebook.com/BossAsesorias",
+      "https://www.instagram.com/boss_asesorias/",
+      "https://www.linkedin.com/in/boss-asesorias-8b9786118/"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Consultoría Empresarial",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bienestar Laboral y Seguridad Ocupacional"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestión Legal y Administrativa"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Soluciones Tecnológicas"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cultura y Desarrollo Organizacional"
+          }
+        }
+      ]
     }
   };
 

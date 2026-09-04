@@ -13,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/empresa/por-que-boss',
     '/empresa/areas',
     '/contacto',
+    '/blog/ley-40-horas',
+    '/blog/ley-karin',
+    '/blog/ciberseguridad-chile',
+    '/blog/ia-cultura-organizacional',
   ];
 
   return routes.map((route) => ({
