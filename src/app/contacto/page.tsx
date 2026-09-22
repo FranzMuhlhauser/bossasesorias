@@ -4,10 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from '@/components/contact-form';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
-  title: 'Contacto BOSS Asesorías | Solicita Asesoría Estratégica',
+  title: 'Contacto | Asesoría en Viña del Mar',
   description: 'Contáctanos para una asesoría estratégica inicial. Nuestro equipo de consultores en Chile está listo para ayudarte con soluciones en bienestar laboral, gestión legal y tecnología.',
   keywords: ['contacto asesorías chile', 'asesoría estratégica empresas', 'consultora empresarial chile', 'asesoría integral empresas'],
   alternates: {
@@ -133,12 +131,12 @@ export default function ContactPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script
+      <script
         id="local-business-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
       />
-      <Script
+      <script
         id="contact-faq-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqContactJsonLd) }}

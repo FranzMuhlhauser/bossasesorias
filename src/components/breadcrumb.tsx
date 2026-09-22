@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Script from 'next/script';
 import { ChevronRight } from 'lucide-react';
 
 export type BreadcrumbItem = {
@@ -23,7 +22,7 @@ export function Breadcrumb({ items, pageId }: { items: BreadcrumbItem[]; pageId?
 
   return (
     <>
-      <Script
+      <script
         id={scriptId}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

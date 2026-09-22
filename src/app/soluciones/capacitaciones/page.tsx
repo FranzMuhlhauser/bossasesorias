@@ -6,10 +6,8 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
-  title: 'Cultura y Desarrollo Organizacional | Consultoría en Talento y Cambio',
+  title: 'Cultura y Desarrollo Organizacional',
   description: 'Fortalece el ADN de tu empresa con diagnósticos de clima, gestión del cambio, liderazgo y desarrollo organizacional.',
   keywords: ['cultura organizacional chile', 'clima laboral consultoría', 'gestión del cambio empresas', 'coaching ejecutivo chile', 'desarrollo de talento humano'],
   alternates: {
@@ -86,8 +84,8 @@ export default function CulturaPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="service-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <Script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script id="service-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/curso-capacitacion-tecnologia-digital.webp"

@@ -15,6 +15,9 @@ const mainLinks = [
   { href: "/soluciones", label: "Soluciones" },
   { href: "/empresa/por-que-boss", label: "¿Por qué BOSS?" },
   { href: "/empresa/areas", label: "Áreas" },
+  // El blog no estaba en el menú: solo se llegaba a los artículos desde una
+  // sección de la portada, así que no había un "hub" que repartiera autoridad.
+  { href: "/blog", label: "Blog" },
   { href: "/contacto", label: "Contacto" },
 ];
 

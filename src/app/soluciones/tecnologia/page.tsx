@@ -6,10 +6,8 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
-  title: 'Soluciones Tecnológicas Empresariales | Desarrollo Web, IA y Soporte Técnico',
+  title: 'Tecnología para Empresas: Web, IA y Soporte',
   description: 'Impulsa tu empresa con desarrollo web, aplicaciones, IA, soporte técnico y recuperación de datos.',
   keywords: ['desarrollo web chile', 'soporte técnico empresas', 'integración de inteligencia artificial', 'desarrollo de aplicaciones chile', 'community manager chile', 'recuperación de datos empresas'],
   alternates: {
@@ -122,9 +120,9 @@ export default function TecnologiaPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <Script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
-      <Script id="faq-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqTecnologiaJsonLd) }} />
+      <script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script id="faq-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqTecnologiaJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/areatecnologica.webp"

@@ -1,14 +1,13 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: 'IA y Cultura Organizacional: Cómo la Inteligencia Artificial Transforma el Trabajo',
+  title: 'IA y Cultura Organizacional en la Empresa',
   description: 'Cómo integrar inteligencia artificial en la cultura organizacional de tu empresa. Beneficios, desafíos y casos de éxito en Chile.',
   keywords: ['inteligencia artificial empresas chile', 'IA cultura organizacional', 'automatización procesos', 'transformación digital empresas', 'IA en el trabajo'],
   alternates: {
@@ -94,8 +93,8 @@ const articleJsonLd = {
 export default function IaCulturaPage() {
   return (
     <>
-      <Script id="article-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <Script id="faq-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script id="faq-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

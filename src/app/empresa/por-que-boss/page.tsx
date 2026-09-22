@@ -6,11 +6,10 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { HelpCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '¿Por qué BOSS Asesorías? | Consultoría Estratégica 360° en Chile',
+  title: '¿Por qué BOSS Asesorías? Consultoría en Chile',
   description: 'Conoce la historia y el propósito de BOSS Asesorías. Bienestar, Organización, Salud y Seguridad — los pilares de nuestra consultoría integral para empresas en Chile.',
   keywords: ['por qué boss asesorías', 'consultoría estratégica chile', 'transformación organizacional', 'pilares boss', 'bienestar organización salud seguridad'],
   alternates: {
@@ -94,8 +93,8 @@ export default function PorqueBossPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
-      <Script id="faq-porque-boss-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPorqueBossJsonLd) }} />
+      <script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
+      <script id="faq-porque-boss-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPorqueBossJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-industrial.webp"

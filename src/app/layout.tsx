@@ -29,12 +29,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.bossasesorias.cl'),
   title: {
     default: 'BOSS Asesorías — Bienestar y Gestión',
-    template: '%s | BOSS ASESORÍAS',
+    // La plantilla se añade al título de CADA página. Con «| BOSS ASESORÍAS»
+    // se comía 16 caracteres y todos los títulos se pasaban de los 60 que
+    // muestra Google, así que la parte final se cortaba en los resultados.
+    // Con «| BOSS» se recuperan 11 caracteres en las 13 páginas de golpe.
+    template: '%s | BOSS',
   },
   description: 'Transforma tu empresa con asesoría experta en bienestar laboral, gestión legal y tecnología. Solicita una asesoría estratégica y potencia tu crecimiento en Chile.',
   keywords: ['bienestar laboral chile', 'asesorías empresariales integrales', 'prevención de riesgos chile', 'soluciones tecnológicas empresas', 'gestión legal y administrativa', 'consultora empresarial chile', 'asesoría estratégica personalizada'],
   alternates: {
     canonical: '/',
+    // Avisa de que existe el feed del blog.
+    types: {
+      'application/rss+xml': '/rss.xml',
+    },
   },
   openGraph: {
     title: 'BOSS Asesorías | Bienestar Laboral, Gestión Legal y Soluciones Tecnológicas',
@@ -122,7 +130,7 @@ export default function RootLayout({
             }}
           />
         )}
-        <Script
+        <script
           id="json-ld-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

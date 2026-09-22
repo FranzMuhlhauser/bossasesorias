@@ -6,7 +6,6 @@ import { Factory, Briefcase, Cpu, TrendingUp, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
 import { HelpCircle } from 'lucide-react';
 
 const faqsAreas = [
@@ -38,7 +37,7 @@ const faqAreasJsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: 'Áreas de Especialización | Industrial, Legal, Tech y Cultura',
+  title: 'Áreas de Especialización',
   description: 'Conoce nuestras 4 áreas de especialización: seguridad industrial, gestión legal, tecnología digital y cultura organizacional para empresas en Chile.',
   keywords: ['áreas especialización empresas', 'consultoría industrial chile', 'gestión legal empresas', 'tecnología empresarial', 'cultura organizacional'],
   alternates: {
@@ -88,7 +87,7 @@ export default function AreasPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="faq-areas-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqAreasJsonLd) }} />
+      <script id="faq-areas-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqAreasJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-administrativa.webp"

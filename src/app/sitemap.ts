@@ -5,6 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const routes = [
     '',
+    // El índice del blog faltaba en el sitemap (y en la web: daba 404).
+    '/blog',
     '/soluciones',
     '/soluciones/bienestar-seguridad',
     '/soluciones/gestion-legal',
@@ -19,10 +21,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/ia-cultura-organizacional',
   ];
 
+  // La portada y el blog cambian a menudo; el resto, casi nunca.
+  const semanal = new Set(['', '/blog']);
+
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'weekly' as const : 'monthly' as const,
-    priority: route === '' ? 1.0 : route.startsWith('/soluciones/') ? 0.8 : 0.6,
+    changeFrequency: semanal.has(route) ? 'weekly' as const : 'monthly' as const,
+    priority: route === '' ? 1.0 : route === '/blog' ? 0.9
+      : route.startsWith('/soluciones/') ? 0.8 : 0.6,
   }));
 }
