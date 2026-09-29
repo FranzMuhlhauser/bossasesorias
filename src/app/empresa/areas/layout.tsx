@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
   title: 'Áreas de Especialización | Industrial, Legal, Tecnológica y Cultura',
   description: 'Explora nuestras cuatro áreas de especialización: Industrial y Operativa, Legal y Administrativa, Digital y Tecnológica, y Cultura y Desarrollo Organizacional. Soluciones integrales para tu empresa en Chile.',
@@ -23,7 +21,7 @@ export default function AreasLayout({ children }: { children: React.ReactNode })
 
   return (
     <>
-      <Script id="website-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }} />
+      <script id="website-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }} />
       {children}
     </>
   );

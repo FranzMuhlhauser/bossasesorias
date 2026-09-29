@@ -5,10 +5,8 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
-  title: 'Bienestar Laboral y Seguridad | Prevención de Riesgos y Salud Ocupacional',
+  title: 'Bienestar Laboral y Prevención de Riesgos',
   description: 'Protegemos a tus trabajadores con prevención de riesgos, evaluaciones, auditorías y salud ocupacional.',
   keywords: ['prevención de riesgos chile', 'salud ocupacional servicios', 'evaluaciones de puestos de trabajo', 'protocolos de salud mental', 'auditorías de seguridad laboral', 'vigilancia de la salud chile'],
   alternates: {
@@ -142,9 +140,9 @@ export default function BienestarPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <Script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
-      <Script id="faq-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqBienestarJsonLd) }} />
+      <script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script id="faq-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqBienestarJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/bienestar-laboral.webp"

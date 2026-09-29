@@ -1,14 +1,13 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: 'Ley de 40 Horas en Chile 2026: Cómo Implementar las 42 Horas Semanales',
+  title: 'Ley de 40 Horas 2026: Guía para Empresas',
   description: 'Guía completa sobre la Ley 21.561: reducción a 42 horas semanales en Chile. Requisitos, plazos, impacto en remuneraciones y cómo preparar tu empresa.',
   keywords: ['ley de 40 horas chile 2026', '42 horas semanales chile', 'ley 21.561', 'jornada laboral chile', 'reducción jornada laboral'],
   alternates: {
@@ -94,8 +93,8 @@ const articleJsonLd = {
 export default function Ley40HorasPage() {
   return (
     <>
-      <Script id="article-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <Script id="faq-40-horas-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script id="faq-40-horas-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">

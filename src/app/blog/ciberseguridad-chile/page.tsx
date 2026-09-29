@@ -1,14 +1,13 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: 'Ciberseguridad en Chile 2026: Ley Marco y Obligaciones Empresariales',
+  title: 'Ciberseguridad en Chile: Ley Marco',
   description: 'Guía sobre la Ley Marco de Ciberseguridad (Ley 21.663): obligaciones, sanciones y cómo proteger tu empresa de ataques digitales en Chile.',
   keywords: ['ciberseguridad chile 2026', 'ley marco ciberseguridad', 'ley 21.663', 'protección datos empresas', 'ransomware chile'],
   alternates: {
@@ -94,8 +93,8 @@ const articleJsonLd = {
 export default function CiberseguridadPage() {
   return (
     <>
-      <Script id="article-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <Script id="faq-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script id="faq-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

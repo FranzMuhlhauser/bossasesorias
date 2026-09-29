@@ -8,10 +8,9 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { StatsCounter } from '@/components/stats-counter';
-import Script from 'next/script';
-
+import { blogPostsWithImage } from '@/lib/blog-posts';
 export const metadata: Metadata = {
-  title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
+  title: 'BOSS Asesorías | Asesoría Laboral y Legal',
   description: 'Potencia tu empresa con nuestras soluciones 360° en bienestar laboral, gestión legal, tecnología y cultura organizacional.',
 };
 
@@ -20,12 +19,6 @@ const dimensionWellbeingImage = PlaceHolderImages.find(p => p.id === 'dimension-
 const dimensionLegalImage = PlaceHolderImages.find(p => p.id === 'dimension-legal');
 const dimensionTechImage = PlaceHolderImages.find(p => p.id === 'dimension-tech');
 const cultureImage = PlaceHolderImages.find(p => p.id === 'courses-training');
-const newsImages = {
-  'news-1': PlaceHolderImages.find(p => p.id === 'news-1'),
-  'news-2': PlaceHolderImages.find(p => p.id === 'news-2'),
-  'news-3': PlaceHolderImages.find(p => p.id === 'news-3'),
-  'news-4': PlaceHolderImages.find(p => p.id === 'news-4'),
-};
 
 const dimensions = [
   {
@@ -86,32 +79,15 @@ const culturaServicios = [
     "Programas de Desarrollo de Talento",
 ];
 
-const news = [
-    {
-        title: "Ley de 40 Horas en Chile 2026: Cómo Implementar las 42 Horas",
-        summary: "Guía completa sobre la Ley 21.561: plazos, requisitos, impacto en remuneraciones y cómo preparar tu empresa para la reducción a 42 horas semanales.",
-        image: newsImages['news-1'],
-        link: "/blog/ley-40-horas",
-    },
-    {
-        title: "Ley Karin: Obligaciones para Empresas en Chile",
-        summary: "Todo lo que necesitas saber sobre la Ley 21.643: protocolos de salud mental, prevención de acoso laboral y obligaciones para empresas chilenas.",
-        image: newsImages['news-2'],
-        link: "/blog/ley-karin",
-    },
-    {
-        title: "Ciberseguridad en Chile 2026: Ley Marco y Obligaciones",
-        summary: "La Ley 21.663 obliga a implementar planes de seguridad y reportar incidentes. Conoce cómo proteger tu empresa de ataques ransomware.",
-        image: newsImages['news-3'],
-        link: "/blog/ciberseguridad-chile",
-    },
-    {
-        title: "IA y Cultura Organizacional: Cómo Transformar tu Empresa",
-        summary: "Cómo integrar inteligencia artificial en la cultura de tu empresa. Beneficios medibles y casos de éxito en Chile.",
-        image: newsImages['news-4'],
-        link: "/blog/ia-cultura-organizacional",
-    }
-];
+// Los artículos viven ahora en un único sitio (src/lib/blog-posts.ts), para que
+// la portada, el índice /blog y el feed RSS no se desincronicen. Antes esta
+// lista estaba duplicada aquí y había que acordarse de tocarla en tres sitios.
+const news = blogPostsWithImage.map((post) => ({
+    title: post.title,
+    summary: post.summary,
+    image: post.image,
+    link: post.href,
+}));
 
 const faqs = [
   {
@@ -180,12 +156,12 @@ export default function Home() {
 
   return (
     <>
-      <Script
+      <script
         id="faq-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <Script
+      <script
         id="news-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd) }}

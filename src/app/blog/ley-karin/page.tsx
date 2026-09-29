@@ -1,14 +1,13 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Script from 'next/script';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export const metadata: Metadata = {
-  title: 'Ley Karin en Chile 2026: Obligaciones para Empresas y Cómo Cumplirla',
+  title: 'Ley Karin: Obligaciones para Empresas',
   description: 'Guía completa sobre la Ley 21.643 (Ley Karin): protocolos de salud mental, prevención de acoso laboral y obligaciones para empresas en Chile.',
   keywords: ['ley karin chile', 'ley 21.643', 'protocolo salud mental empresas', 'acoso laboral chile', 'prevención riesgos psicosociales'],
   alternates: {
@@ -94,8 +93,8 @@ const articleJsonLd = {
 export default function LeyKarinPage() {
   return (
     <>
-      <Script id="article-karin-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <Script id="faq-karin-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-karin-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      <script id="faq-karin-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

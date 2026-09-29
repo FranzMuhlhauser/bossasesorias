@@ -6,11 +6,10 @@ import { ShieldCheck, Files, Cpu, HeartPulse, Building, Microscope, Wrench, File
 import Link from "next/link";
 import { Breadcrumb } from '@/components/breadcrumb';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import Script from 'next/script';
 import { WhatsappCta } from '@/components/ui/whatsapp-cta';
 
 export const metadata: Metadata = {
-    title: 'Soluciones Empresariales Integrales | Bienestar, Gestión Legal y Cultura Organizacional',
+    title: 'Soluciones: Bienestar, Legal y Tecnología',
     description: 'Explora nuestros servicios en seguridad laboral, gestión legal, tecnología y desarrollo de cultura organizacional en Chile.',
     keywords: ['servicios empresariales chile', 'asesoría en prevención de riesgos', 'servicios legales laborales', 'soluciones tecnológicas empresas chile', 'consultoría integral empresarial', 'cultura organizacional chile'],
     alternates: {
@@ -114,7 +113,7 @@ export default function SolucionesPage() {
               </TabsTrigger>
             </TabsList>
             
-            <TabsContent value="bienestar" className="mt-12">
+            <TabsContent forceMount value="bienestar" className="mt-12">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold text-primary">Bienestar Laboral & Seguridad</h2>
                     <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Protegemos a las personas, reducimos riesgos y fortalecemos la cultura preventiva de tu empresa.</p>
@@ -133,7 +132,7 @@ export default function SolucionesPage() {
                 </div>
             </TabsContent>
 
-            <TabsContent value="gestion" className="mt-12">
+            <TabsContent forceMount value="gestion" className="mt-12">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold text-primary">Gestión Legal, Laboral & Administrativa</h2>
                     <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Procesos claros, cumplimiento normativo y eficiencia operativa para tu organización.</p>
@@ -152,7 +151,7 @@ export default function SolucionesPage() {
                 </div>
             </TabsContent>
             
-            <TabsContent value="tecnologia" className="mt-12">
+            <TabsContent forceMount value="tecnologia" className="mt-12">
                  <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold text-primary">Soluciones Tecnológicas Estratégicas</h2>
                     <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Tecnología para proteger datos, mejorar productividad y asegurar la continuidad operativa de tu negocio.</p>
@@ -171,7 +170,7 @@ export default function SolucionesPage() {
                 </div>
             </TabsContent>
 
-            <TabsContent value="cultura" className="mt-12">
+            <TabsContent forceMount value="cultura" className="mt-12">
                 <div className="text-center mb-12">
                    <h2 className="text-3xl font-semibold text-primary">Cultura & Desarrollo Organizacional</h2>
                    <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Alineamos el talento humano con el propósito de tu empresa para un crecimiento resiliente.</p>
@@ -239,7 +238,7 @@ export default function SolucionesPage() {
         </div>
       </section>
 
-      <Script
+      <script
         id="soluciones-faq-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{

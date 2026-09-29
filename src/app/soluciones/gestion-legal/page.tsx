@@ -6,10 +6,8 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
-import Script from 'next/script';
-
 export const metadata: Metadata = {
-  title: 'Gestión Legal y Administrativa | Remuneraciones, Contratos y Cumplimiento',
+  title: 'Gestión Legal, Contratos y Remuneraciones',
   description: 'Optimiza tu empresa con servicios legales, remuneraciones, contratos, impuestos y administración documental.',
   keywords: ['gestión legal laboral chile', 'cálculo de remuneraciones', 'contratos laborales chile', 'administración de condominios', 'servicios contables chile', 'cumplimiento normativo empresas'],
   alternates: {
@@ -134,9 +132,9 @@ export default function LegalPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <Script id="service-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <Script id="howto-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
-      <Script id="faq-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLegalJsonLd) }} />
+      <script id="service-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <script id="howto-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script id="faq-ld-legal" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLegalJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/gestion_legal.webp"
