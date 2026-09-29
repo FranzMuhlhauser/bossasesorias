@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { StatsCounter } from '@/components/stats-counter';
-import { blogPostsWithImage } from '@/lib/blog-posts';
+import { homeNewsWithImage } from '@/lib/home-news';
 export const metadata: Metadata = {
   title: 'BOSS Asesorías | Asesoría Laboral y Legal',
   description: 'Potencia tu empresa con nuestras soluciones 360° en bienestar laboral, gestión legal, tecnología y cultura organizacional.',
@@ -82,11 +82,13 @@ const culturaServicios = [
 // Los artículos viven ahora en un único sitio (src/lib/blog-posts.ts), para que
 // la portada, el índice /blog y el feed RSS no se desincronicen. Antes esta
 // lista estaba duplicada aquí y había que acordarse de tocarla en tres sitios.
-const news = blogPostsWithImage.map((post) => ({
+const news = homeNewsWithImage.map((post) => ({
     title: post.title,
     summary: post.summary,
     image: post.image,
-    link: post.href,
+    link: post.blogLink ?? post.serviceLink.href, // si no hay blogLink, va al servicio
+    blogLink: post.blogLink,
+    serviceLink: post.serviceLink,
 }));
 
 const faqs = [
@@ -364,9 +366,16 @@ export default function Home() {
                             <CardContent className="flex flex-col flex-grow p-6">
                                 <h3 className="text-xl font-semibold text-primary mb-3 flex-grow">{item.title}</h3>
                                 <p className="text-muted-foreground mb-4 text-sm">{item.summary}</p>
-                                <div className="mt-auto">
-                                  <Button asChild variant="link" className="text-accent font-semibold p-0 self-start">
-                                    <Link href={item.link}>Leer artículo completo →</Link>
+                                <div className="mt-auto space-y-2">
+                                  {item.blogLink && (
+                                    <Button asChild variant="link" className="text-accent font-semibold p-0 self-start">
+                                      <Link href={item.blogLink}>Leer artículo completo →</Link>
+                                    </Button>
+                                  )}
+                                  <Button asChild variant="outline" className="w-full justify-start text-primary font-medium p-2 self-start">
+                                    <Link href={item.serviceLink.href}>
+                                      Nosotros te ayudamos con {item.serviceLink.title.toLowerCase()} →
+                                    </Link>
                                   </Button>
                                 </div>
                             </CardContent>
