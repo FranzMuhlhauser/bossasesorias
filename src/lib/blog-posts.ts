@@ -20,6 +20,12 @@ export type BlogPost = {
   summary: string;
   /** Fecha de publicación en ISO, para el feed RSS. */
   date: string;
+  /**
+   * Fecha ISO (YYYY-MM-DD) de la última revisión REAL del artículo.
+   * Alimenta `dateModified`; si no existe, se usa `date`. No la rellenes con la
+   * fecha de publicación: repetir ambas dice "nunca se ha revisado".
+   */
+  updated?: string;
   /** La misma fecha como se muestra al visitante. */
   dateLabel: string;
   /** id dentro de PlaceHolderImages (los archivos de imagen del proyecto). */
@@ -73,6 +79,23 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 7,
   },
 ];
+
+/**
+ * Fechas del JSON-LD de un artículo. `dateModified` sale de `updated` cuando
+ * hay revisión registrada y cae en la de publicación cuando no.
+ */
+export function getArticleDates(slug: string) {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) {
+    throw new Error(`getArticleDates: no existe el artículo «${slug}»`);
+  }
+  // La hora es fija: las fechas de este blog son días, no marcas de tiempo.
+  const time = 'T10:00:00Z';
+  return {
+    datePublished: `${post.date}${time}`,
+    dateModified: `${post.updated ?? post.date}${time}`,
+  };
+}
 
 /** Los mismos artículos con la imagen ya resuelta, listos para pintar. */
 export const blogPostsWithImage = blogPosts.map((post) => ({

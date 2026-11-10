@@ -5,7 +5,9 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { absoluteUrl, jsonLdHtml, organizationRef } from '@/lib/schema';
+import { getArticleDates } from '@/lib/blog-posts';
+import { authorNode, getAuthor } from '@/lib/authors';
 
 export const metadata: Metadata = {
   title: 'Ley de 40 Horas 2026: Guía para Empresas',
@@ -89,10 +91,9 @@ const articleJsonLd = {
   '@type': 'Article',
   headline: 'Ley de 40 Horas en Chile 2026: Cómo Implementar las 42 Horas Semanales',
   description: 'Guía completa sobre la Ley 21.561: reducción a 42 horas semanales en Chile.',
-  image: '/images/news-40-hrs.webp',
-  datePublished: '2026-08-15T10:00:00Z',
-  dateModified: '2026-08-15T10:00:00Z',
-  author: organizationRef,
+  image: absoluteUrl('/images/news-40-hrs.webp'),
+  ...getArticleDates('ley-40-horas'),
+  author: authorNode(getAuthor('ley-40-horas')),
   publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',

@@ -5,7 +5,9 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { absoluteUrl, jsonLdHtml, organizationRef } from '@/lib/schema';
+import { getArticleDates } from '@/lib/blog-posts';
+import { authorNode, getAuthor } from '@/lib/authors';
 
 export const metadata: Metadata = {
   title: 'Ciberseguridad en Chile: Ley Marco',
@@ -89,10 +91,9 @@ const articleJsonLd = {
   '@type': 'Article',
   headline: 'Ciberseguridad en Chile 2026: Ley Marco y Obligaciones Empresariales',
   description: 'Guía sobre la Ley Marco de Ciberseguridad y obligaciones para empresas.',
-  image: '/images/news-ciberseguridad.webp',
-  datePublished: '2026-08-15T10:00:00Z',
-  dateModified: '2026-08-15T10:00:00Z',
-  author: organizationRef,
+  image: absoluteUrl('/images/news-ciberseguridad.webp'),
+  ...getArticleDates('ciberseguridad-chile'),
+  author: authorNode(getAuthor('ciberseguridad-chile')),
   publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',

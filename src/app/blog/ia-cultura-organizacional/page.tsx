@@ -5,7 +5,9 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { absoluteUrl, jsonLdHtml, organizationRef } from '@/lib/schema';
+import { getArticleDates } from '@/lib/blog-posts';
+import { authorNode, getAuthor } from '@/lib/authors';
 
 export const metadata: Metadata = {
   title: 'IA y Cultura Organizacional en la Empresa',
@@ -89,10 +91,9 @@ const articleJsonLd = {
   '@type': 'Article',
   headline: 'IA y Cultura Organizacional: Cómo la Inteligencia Artificial Transforma el Trabajo',
   description: 'Cómo integrar inteligencia artificial en la cultura organizacional.',
-  image: '/images/news-ia-cultura.webp',
-  datePublished: '2026-08-15T10:00:00Z',
-  dateModified: '2026-08-15T10:00:00Z',
-  author: organizationRef,
+  image: absoluteUrl('/images/news-ia-cultura.webp'),
+  ...getArticleDates('ia-cultura-organizacional'),
+  author: authorNode(getAuthor('ia-cultura-organizacional')),
   publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',

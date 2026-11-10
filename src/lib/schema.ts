@@ -95,6 +95,16 @@ export function getSiteGraph() {
 }
 
 /**
+ * Convierte una ruta del proyecto ('/images/x.webp') en URL absoluta.
+ * Google y los asistentes de IA esperan `image` con esquema y dominio; una
+ * ruta relativa les impide resolver el recurso desde el JSON-LD.
+ */
+export function absoluteUrl(path: string): string {
+  if (/^https?:\/\//.test(path)) return path;
+  return `${SITE_URL}${path.startsWith('/') ? '' : '/'}${path}`;
+}
+
+/**
  * Serializa para un <script type="application/ld+json">.
  * El escape de `<` impide que un texto con `</script>` cierre la etiqueta.
  */

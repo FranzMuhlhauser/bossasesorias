@@ -5,7 +5,9 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { absoluteUrl, jsonLdHtml, organizationRef } from '@/lib/schema';
+import { getArticleDates } from '@/lib/blog-posts';
+import { authorNode, getAuthor } from '@/lib/authors';
 
 export const metadata: Metadata = {
   title: 'Ley Karin: Obligaciones para Empresas',
@@ -89,10 +91,9 @@ const articleJsonLd = {
   '@type': 'Article',
   headline: 'Ley Karin en Chile 2026: Obligaciones para Empresas y Cómo Cumplirla',
   description: 'Guía completa sobre la Ley 21.643 (Ley Karin) y sus obligaciones para empresas.',
-  image: '/images/news-ley-karin.webp',
-  datePublished: '2026-08-15T10:00:00Z',
-  dateModified: '2026-08-15T10:00:00Z',
-  author: organizationRef,
+  image: absoluteUrl('/images/news-ley-karin.webp'),
+  ...getArticleDates('ley-karin'),
+  author: authorNode(getAuthor('ley-karin')),
   publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',
