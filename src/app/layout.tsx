@@ -61,11 +61,14 @@ export const metadata: Metadata = {
     title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
     // Igual que en openGraph: la imagen sale de src/app/twitter-image.png.
-  },    icons: {
+  },
+  icons: {
+    // /favicon.ico ya lo inyecta Next desde src/app/favicon.ico (ICO real de
+    // 16, 32 y 48 px); declararlo aquí lo duplicaba en el <head>.
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/images/logo_boss.webp', sizes: 'any', type: 'image/webp' },
+      // 150×150 reales: declararlo «any» engañaba al navegador.
+      { url: '/images/logo_boss.webp', sizes: '150x150', type: 'image/webp' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
