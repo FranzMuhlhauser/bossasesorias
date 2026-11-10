@@ -23,7 +23,13 @@ const scriptSrc = isDev
   ? "'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com"
   : "'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com";
 
-const csp = `default-src 'self'; img-src 'self' data: https:; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;`;
+// GTM inserta un <iframe> noscript desde www.googletagmanager.com. Sin
+// frame-src, cae en default-src 'self' y el navegador lo bloquea, así que el
+// permiso se abre solo cuando el contenedor está configurado.
+const gtmEnabled = Boolean(process.env.NEXT_PUBLIC_GTM_ID);
+const frameSrc = gtmEnabled ? " frame-src 'self' https://www.googletagmanager.com;" : '';
+
+const csp = `default-src 'self'; img-src 'self' data: https:; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;${frameSrc}`;
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -52,6 +58,12 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Permissions-Policy',
+            // `tools` no es una directiva estándar del navegador: habilita la API
+            // WebMCP (origin trial de Chrome) solo en el mismo origen. Se añadió
+            // a propósito junto con las anotaciones del formulario de contacto
+            // (toolname/tooldescription y el hook useWebMCPContactTool); ver
+            // docs/mantenimiento_agosto_2026.md (§ Optimización para Agentes de IA).
+            // Si algún día se retira WebMCP, quitar también tools=self().
             value: 'camera=(), microphone=(), geolocation=(), tools=self()',
           },
           {

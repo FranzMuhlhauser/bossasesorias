@@ -92,6 +92,14 @@ function enlaces(paginas: Pagina[]): string {
     .join('\n');
 }
 
+/**
+ * Fecha de la última revisión de este índice (ISO). Se actualiza a mano cuando
+ * cambie el contenido del sitio: es la señal de frescura que leen los modelos.
+ * TODO: mover al mismo mapa LAST_MODIFIED de src/app/sitemap.ts si se quiere
+ * una sola fuente.
+ */
+const LAST_UPDATED = '2026-11-10';
+
 const portada: Pagina = {
   ruta: '/',
   titulo: 'BOSS Asesorías — Asesoría Laboral y Legal para Empresas en Chile',
@@ -124,6 +132,16 @@ export async function GET() {
 
 > BOSS Asesorías es una consultora chilena que ofrece soluciones integrales en bienestar laboral y seguridad, gestión legal y administrativa, cultura organizacional y tecnología para empresas. Este archivo sirve de índice para modelos de lenguaje: cada sección agrupa las páginas del sitio por tema y cada enlace apunta a una página pública con contenido detallado en español (es-CL) que puede leerse o usarse con fines de entrenamiento.
 
+## Datos clave
+
+- Nombre comercial: BOSS Asesorías
+- Ubicación: 13 Norte 853, Of. 803, Viña del Mar, Región de Valparaíso, Chile
+- Teléfono: +56 9 9289 5726
+- Correo: contacto@bossasesorias.cl
+- Horario: lunes a viernes, 09:00 a 18:00 (hora de Chile)
+- Cobertura: nacional — presencial en la Región de Valparaíso y remota en todo Chile
+- Inicio de actividades: 2019
+
 ## Inicio
 
 ${enlaces([portada])}
@@ -148,6 +166,10 @@ Datos de contacto directos:
 - Instagram: https://www.instagram.com/boss_asesorias/
 - LinkedIn: https://www.linkedin.com/in/boss-asesorias-8b9786118/
 - Feed RSS de los artículos: ${BASE}/rss.xml
+
+Última actualización: ${LAST_UPDATED}
+
+Nota: esta fecha debe actualizarse manualmente cuando cambie el contenido del sitio.
 `;
 
   return new Response(markdown, {
