@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Ciberseguridad en Chile: Ley Marco',
@@ -91,20 +92,8 @@ const articleJsonLd = {
   image: '/images/news-ciberseguridad.webp',
   datePublished: '2026-08-15T10:00:00Z',
   dateModified: '2026-08-15T10:00:00Z',
-  author: {
-    '@type': 'Organization',
-    name: 'BOSS Asesorías',
-    url: 'https://www.bossasesorias.cl',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'BOSS Asesorías',
-    url: 'https://www.bossasesorias.cl',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://www.bossasesorias.cl/images/logo_boss.webp',
-    },
-  },
+  author: organizationRef,
+  publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': 'https://www.bossasesorias.cl/blog/ciberseguridad-chile',
@@ -115,8 +104,8 @@ const articleJsonLd = {
 export default function CiberseguridadPage() {
   return (
     <>
-      <script id="article-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script id="faq-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(articleJsonLd) }} />
+      <script id="faq-ciber-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqJsonLd) }} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Bienestar Laboral y Prevención de Riesgos',
   description: 'Protegemos a tus trabajadores con prevención de riesgos, evaluaciones, auditorías y salud ocupacional.',
@@ -80,11 +81,7 @@ export default function BienestarPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Bienestar Laboral y Seguridad Ocupacional",
-    "provider": {
-      "@type": "Organization",
-      "name": "BOSS Asesorías",
-      "url": "https://www.bossasesorias.cl"
-    },
+    "provider": organizationRef,
     "areaServed": {
       "@type": "Country",
       "name": "Chile"
@@ -140,9 +137,9 @@ export default function BienestarPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
-      <script id="faq-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqBienestarJsonLd) }} />
+      <script id="service-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(serviceJsonLd) }} />
+      <script id="howto-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(howToJsonLd) }} />
+      <script id="faq-ld-bienestar" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqBienestarJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/bienestar-laboral.webp"

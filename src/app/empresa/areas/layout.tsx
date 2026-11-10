@@ -5,24 +5,9 @@ export const metadata: Metadata = {
   keywords: ['áreas de especialización', 'consultoría industrial', 'gestión legal empresas', 'soluciones tecnológicas', 'cultura organizacional chile', 'boss asesorías áreas'],
 };
 
+// El WebSite y la Organization que se declaraban aquí viven ahora en el @graph
+// global de src/lib/schema.ts, inyectado desde el layout raíz; mantenerlos
+// duplicaba nodos con otro @id (o sin él) para la misma entidad.
 export default function AreasLayout({ children }: { children: React.ReactNode }) {
-  const webSiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BOSS Asesorías",
-    "url": "https://www.bossasesorias.cl",
-    "description": "Áreas de especialización: Industrial y Operativa, Legal y Administrativa, Digital y Tecnológica, y Cultura y Desarrollo Organizacional.",
-    "about": {
-      "@type": "Organization",
-      "name": "BOSS Asesorías",
-      "areaServed": { "@type": "Country", "name": "Chile" }
-    }
-  };
-
-  return (
-    <>
-      <script id="website-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }} />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

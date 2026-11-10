@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { HOME_TITLE } from '@/lib/site';
+import { getSiteGraph, jsonLdHtml } from '@/lib/schema';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -94,26 +95,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BOSS Asesorías",
-    "url": "https://www.bossasesorias.cl",
-    "logo": "https://www.bossasesorias.cl/images/logo_boss.webp",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+56-9-9289-5726",
-      "contactType": "customer service",
-      "areaServed": "CL",
-      "availableLanguage": "Spanish"
-    },
-    "sameAs": [
-      "https://www.facebook.com/BossAsesorias",
-      "https://www.instagram.com/boss_asesorias/",
-      "https://www.linkedin.com/in/boss-asesorias-8b9786118/"
-    ]
-  };
+  // Grafo de marca (empresa + sitio), inyectado una sola vez para todo el sitio.
+  const siteGraph = getSiteGraph();
 
   return (
     <html lang="es-CL" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
@@ -132,9 +115,9 @@ export default function RootLayout({
           />
         )}
         <script
-          id="json-ld-org"
+          id="site-json-ld"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(siteGraph) }}
         />
       </head>
       <body className="antialiased font-body">

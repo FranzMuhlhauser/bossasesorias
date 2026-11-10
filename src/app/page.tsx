@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { StatsCounter } from '@/components/stats-counter';
 import { homeNewsWithImage } from '@/lib/home-news';
 import { HOME_DESCRIPTION, HOME_TITLE } from '@/lib/site';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 
 export const metadata: Metadata = {
   // `absolute` desactiva la plantilla '%s | BOSS' del layout: sin ella el
@@ -148,14 +149,8 @@ export default function Home() {
         "description": item.summary,
         "url": `https://www.bossasesorias.cl${item.link}`,
         "image": `https://www.bossasesorias.cl${item.image?.imageUrl ?? ''}`,
-        "author": {
-          "@type": "Organization",
-          "name": "BOSS Asesorías"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "BOSS Asesorías"
-        },
+        "author": organizationRef,
+        "publisher": organizationRef,
         "inLanguage": "es-CL"
       }
     }))
@@ -166,12 +161,12 @@ export default function Home() {
       <script
         id="faq-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqJsonLd) }}
       />
       <script
         id="news-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(newsJsonLd) }}
       />
       {/* Hero Section */}
       <section id="inicio" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
