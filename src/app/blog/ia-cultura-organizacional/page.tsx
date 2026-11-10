@@ -21,6 +21,19 @@ export const metadata: Metadata = {
     authors: ['BOSS Asesorías'],
     images: ['/images/news-ia-cultura.webp'],
   },
+  // Sin este bloque la tarjeta social heredaba el título, la descripción y la
+  // imagen genéricos de la portada en vez de los del artículo.
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IA y Cultura Organizacional: Cómo Transformar tu Empresa',
+    description: 'Guía práctica para integrar IA en la cultura de tu empresa y potenciar el talento humano.',
+    images: [
+      {
+        url: '/images/news-ia-cultura.webp',
+        alt: 'Inteligencia artificial aplicada a la cultura organizacional',
+      },
+    ],
+  },
 };
 
 const breadcrumbItems = [

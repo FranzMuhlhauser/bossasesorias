@@ -21,6 +21,19 @@ export const metadata: Metadata = {
     authors: ['BOSS Asesorías'],
     images: ['/images/news-ley-karin.webp'],
   },
+  // Sin este bloque la tarjeta social heredaba el título, la descripción y la
+  // imagen genéricos de la portada en vez de los del artículo.
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ley Karin en Chile 2026: Obligaciones para Empresas',
+    description: 'Todo lo que necesitas saber sobre la Ley Karin: protocolos, obligaciones y cómo proteger a tu equipo.',
+    images: [
+      {
+        url: '/images/news-ley-karin.webp',
+        alt: 'Implementación de la Ley Karin en empresas chilenas',
+      },
+    ],
+  },
 };
 
 const breadcrumbItems = [

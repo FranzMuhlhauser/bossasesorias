@@ -21,6 +21,19 @@ export const metadata: Metadata = {
     authors: ['BOSS Asesorías'],
     images: ['/images/news-ciberseguridad.webp'],
   },
+  // Sin este bloque la tarjeta social heredaba el título, la descripción y la
+  // imagen genéricos de la portada en vez de los del artículo.
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ciberseguridad en Chile 2026: Ley Marco y Obligaciones',
+    description: 'Todo lo que tu empresa necesita saber sobre ciberseguridad, la Ley 21.663 y cómo protegerse.',
+    images: [
+      {
+        url: '/images/news-ciberseguridad.webp',
+        alt: 'Ciberseguridad empresarial en Chile',
+      },
+    ],
+  },
 };
 
 const breadcrumbItems = [

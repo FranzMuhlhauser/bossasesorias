@@ -21,6 +21,19 @@ export const metadata: Metadata = {
     authors: ['BOSS Asesorías'],
     images: ['/images/news-40-hrs.webp'],
   },
+  // Sin este bloque la tarjeta social heredaba el título, la descripción y la
+  // imagen genéricos de la portada en vez de los del artículo.
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ley de 40 Horas en Chile 2026: Guía Completa para Empresas',
+    description: 'Todo lo que necesitas saber sobre la implementación de las 42 horas semanales en Chile: requisitos, plazos y cómo preparar tu empresa.',
+    images: [
+      {
+        url: '/images/news-40-hrs.webp',
+        alt: 'Implementación de la Ley de 40 Horas en empresas chilenas',
+      },
+    ],
+  },
 };
 
 const breadcrumbItems = [
