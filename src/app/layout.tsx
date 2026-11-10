@@ -9,6 +9,7 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { HOME_TITLE } from '@/lib/site';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
     template: '%s | BOSS',
   },
   description: 'Transforma tu empresa con asesoría experta en bienestar laboral, gestión legal y tecnología. Solicita una asesoría estratégica y potencia tu crecimiento en Chile.',
-  keywords: ['bienestar laboral chile', 'asesorías empresariales integrales', 'prevención de riesgos chile', 'soluciones tecnológicas empresas', 'gestión legal y administrativa', 'consultora empresarial chile', 'asesoría estratégica personalizada'],
   alternates: {
     canonical: '/',
     // Avisa de que existe el feed del blog.
@@ -45,7 +45,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'BOSS Asesorías | Bienestar Laboral, Gestión Legal y Soluciones Tecnológicas',
+    // Mismo mensaje que el <title> de la portada: los metadatos del layout son
+    // los que hereda la home en og/twitter.
+    title: HOME_TITLE,
     description: 'Soluciones integrales que protegen a tu equipo, optimizan tus procesos y fortalecen tu organización.',
     siteName: 'BOSS ASESORÍAS',
     locale: 'es_CL',
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
+    title: HOME_TITLE,
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
     // Igual que en openGraph: la imagen sale de src/app/twitter-image.png.
   },
@@ -114,7 +116,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
+    <html lang="es-CL" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
       <head>
         {GTM_ID && (
           <Script

@@ -9,9 +9,14 @@ import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { StatsCounter } from '@/components/stats-counter';
 import { homeNewsWithImage } from '@/lib/home-news';
+import { HOME_DESCRIPTION, HOME_TITLE } from '@/lib/site';
+
 export const metadata: Metadata = {
-  title: 'BOSS Asesorías | Asesoría Laboral y Legal',
-  description: 'Potencia tu empresa con nuestras soluciones 360° en bienestar laboral, gestión legal, tecnología y cultura organizacional.',
+  // `absolute` desactiva la plantilla '%s | BOSS' del layout: sin ella el
+  // resultado era «BOSS Asesorías | Asesoría Laboral y Legal | BOSS», con la
+  // marca repetida.
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
 };
 
 const whyBossImage = PlaceHolderImages.find(p => p.id === 'why-boss');
