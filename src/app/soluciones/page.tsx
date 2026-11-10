@@ -65,6 +65,28 @@ const culturaServicios = [
     { icon: Handshake, title: "Coaching Directivo y Liderazgo", description: "Desarrollo de habilidades críticas para la alta gerencia.", href: "/soluciones/capacitaciones" },
 ];
 
+// Fuente única de las FAQ: alimenta a la vez el acordeón visible y el JSON-LD
+// FAQPage, de modo que el texto que lee una persona y el que indexa un motor
+// (o un asistente de IA) no puedan divergir.
+const faqsSoluciones = [
+    {
+        question: '¿Cuál es la diferencia entre Bienestar Laboral y Cultura Organizacional?',
+        answer: 'Bienestar Laboral se enfoca en seguridad física, salud ocupacional y cumplimiento normativo. Cultura Organizacional trabaja el clima laboral, liderazgo y desarrollo de talento. Ambas áreas se complementan para fortalecer tu empresa.',
+    },
+    {
+        question: '¿Ofrecen servicios para empresas de todos los tamaños?',
+        answer: 'Sí, desde pequeñas y medianas empresas hasta grandes corporaciones. Adaptamos cada solución al tamaño, industria y necesidades específicas de tu organización, con alcance nacional.',
+    },
+    {
+        question: '¿Qué incluye una asesoría en gestión legal y administrativa?',
+        answer: 'Incluye análisis de contratos, cálculo de remuneraciones, finiquitos, control documental, declaración de impuestos y administración de edificios. Te ayudamos a cumplir la normativa laboral chilena vigente.',
+    },
+    {
+        question: '¿Cómo sé qué solución tecnológica necesita mi empresa?',
+        answer: 'Realizamos un diagnóstico digital gratuito para evaluar tu infraestructura, identificar brechas de seguridad y productividad, y recomendarte la solución más adecuada: web, app, IA o ciberseguridad.',
+    },
+];
+
 const breadcrumbItems = [
   { label: 'Inicio', href: '/' },
   { label: 'Soluciones', href: '/soluciones' },
@@ -202,38 +224,16 @@ export default function SolucionesPage() {
             <p className="mt-4 text-muted-foreground">Resolvemos tus dudas sobre nuestros servicios empresariales.</p>
           </div>
           <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="faq-0">
-              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
-                ¿Cuál es la diferencia entre Bienestar Laboral y Cultura Organizacional?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Bienestar Laboral se enfoca en seguridad física, salud ocupacional y cumplimiento normativo. Cultura Organizacional trabaja el clima laboral, liderazgo y desarrollo de talento. Ambas áreas se complementan para fortalecer tu empresa.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="faq-1">
-              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
-                ¿Ofrecen servicios para empresas de todos los tamaños?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Sí, desde pequeñas y medianas empresas hasta grandes corporaciones. Adaptamos cada solución al tamaño, industria y necesidades específicas de tu organización, con alcance nacional.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="faq-2">
-              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
-                ¿Qué incluye una asesoría en gestión legal y administrativa?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Incluye análisis de contratos, cálculo de remuneraciones, finiquitos, control documental, declaración de impuestos y administración de edificios. Te ayudamos a cumplir la normativa laboral chilena vigente.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="faq-3">
-              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
-                ¿Cómo sé qué solución tecnológica necesita mi empresa?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                Realizamos un diagnóstico digital gratuito para evaluar tu infraestructura, identificar brechas de seguridad y productividad, y recomendarte la solución más adecuada: web, app, IA o ciberseguridad.
-              </AccordionContent>
-            </AccordionItem>
+            {faqsSoluciones.map((faq, index) => (
+              <AccordionItem value={`faq-${index}`} key={index}>
+                <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </section>
@@ -245,28 +245,11 @@ export default function SolucionesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Cuál es la diferencia entre Bienestar Laboral y Cultura Organizacional?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Bienestar Laboral se enfoca en seguridad física, salud ocupacional y cumplimiento normativo. Cultura Organizacional trabaja el clima laboral, liderazgo y desarrollo de talento. Ambas áreas se complementan para fortalecer tu empresa." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Ofrecen servicios para empresas de todos los tamaños?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Sí, desde pequeñas y medianas empresas hasta grandes corporaciones. Adaptamos cada solución al tamaño, industria y necesidades específicas de tu organización, con alcance nacional." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Qué incluye una asesoría en gestión legal y administrativa?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Incluye análisis de contratos, cálculo de remuneraciones, finiquitos, control documental, declaración de impuestos y administración de edificios. Te ayudamos a cumplir la normativa laboral chilena vigente." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Cómo sé qué solución tecnológica necesita mi empresa?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Realizamos un diagnóstico digital gratuito para evaluar tu infraestructura, identificar brechas de seguridad y productividad, y recomendarte la solución más adecuada: web, app, IA o ciberseguridad." }
-              }
-            ]
+            "mainEntity": faqsSoluciones.map((faq) => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+            }))
           })
         }}
       />
