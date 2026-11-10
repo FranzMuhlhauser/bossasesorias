@@ -51,20 +51,16 @@ export const metadata: Metadata = {
     locale: 'es_CL',
     type: 'website',
     url: 'https://www.bossasesorias.cl',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'BOSS Asesorías - Bienestar Laboral, Gestión Legal y Tecnología en Chile',
-      },
-    ],
+    // La imagen se declara con los archivos de convención
+    // src/app/opengraph-image.png (+ .alt.txt) para que Next la sirva con
+    // hash de contenido y URL absoluta a partir de metadataBase. No la
+    // dupliques aquí: las dos declaraciones entran en conflicto.
   },
   twitter: {
     card: 'summary_large_image',
     title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
-    images: ['/twitter-image.png'],
+    // Igual que en openGraph: la imagen sale de src/app/twitter-image.png.
   },    icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
