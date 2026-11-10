@@ -19,7 +19,16 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-08-15T10:00:00Z',
     authors: ['BOSS Asesorías'],
-    images: ['/images/news-ia-cultura.webp'],
+    // Recorte 1200×630 desde la imagen cuadrada de la cabecera: evita el
+    // recorte automático de las tarjetas sociales, que cortaba cabezas.
+    images: [
+      {
+        url: '/images/og/news-ia-cultura.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Inteligencia artificial aplicada a la cultura organizacional',
+      },
+    ],
   },
   // Sin este bloque la tarjeta social heredaba el título, la descripción y la
   // imagen genéricos de la portada en vez de los del artículo.
@@ -29,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Guía práctica para integrar IA en la cultura de tu empresa y potenciar el talento humano.',
     images: [
       {
-        url: '/images/news-ia-cultura.webp',
+        url: '/images/og/news-ia-cultura.jpg',
         alt: 'Inteligencia artificial aplicada a la cultura organizacional',
       },
     ],

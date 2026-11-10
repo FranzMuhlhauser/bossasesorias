@@ -19,7 +19,16 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-08-15T10:00:00Z',
     authors: ['BOSS Asesorías'],
-    images: ['/images/news-ley-karin.webp'],
+    // Recorte 1200×630 desde la imagen cuadrada de la cabecera: evita el
+    // recorte automático de las tarjetas sociales, que cortaba cabezas.
+    images: [
+      {
+        url: '/images/og/news-ley-karin.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Implementación de la Ley Karin en empresas chilenas',
+      },
+    ],
   },
   // Sin este bloque la tarjeta social heredaba el título, la descripción y la
   // imagen genéricos de la portada en vez de los del artículo.
@@ -29,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Todo lo que necesitas saber sobre la Ley Karin: protocolos, obligaciones y cómo proteger a tu equipo.',
     images: [
       {
-        url: '/images/news-ley-karin.webp',
+        url: '/images/og/news-ley-karin.jpg',
         alt: 'Implementación de la Ley Karin en empresas chilenas',
       },
     ],
