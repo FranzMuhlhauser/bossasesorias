@@ -8,6 +8,7 @@ import { HelpCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import type { Metadata } from 'next';
 import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { TeamSection } from '@/components/trust-sections';
 
 export const metadata: Metadata = {
   title: '¿Por qué BOSS Asesorías? Consultoría en Chile',
@@ -140,6 +141,9 @@ export default function PorqueBossPage() {
           </div>
         </div>
       </section>
+
+      {/* No renderiza nada mientras no haya equipo real en src/lib/trust.ts */}
+      <TeamSection />
 
       {/* FAQ */}
       <section id="faq" aria-labelledby="heading-faq" className="py-20 md:py-28 bg-muted/30">

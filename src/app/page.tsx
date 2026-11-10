@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { StatsCounter } from '@/components/stats-counter';
+import { CaseStudiesSection, TestimonialsSection } from '@/components/trust-sections';
 import { homeNewsWithImage } from '@/lib/home-news';
 import { HOME_DESCRIPTION, HOME_TITLE } from '@/lib/site';
 import { jsonLdHtml, organizationRef } from '@/lib/schema';
@@ -302,6 +303,10 @@ export default function Home() {
           </Accordion>
         </div>
       </section>
+
+      {/* Señales de confianza: no renderizan nada mientras trust.ts esté vacío */}
+      <TestimonialsSection />
+      <CaseStudiesSection />
 
       {/* Cultura y Desarrollo Organizacional */}
       <section id="cultura" aria-labelledby="heading-cultura" className="py-20 md:py-28 bg-muted/30">

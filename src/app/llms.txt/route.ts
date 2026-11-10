@@ -1,4 +1,5 @@
 import { blogPosts } from '@/lib/blog-posts';
+import { equipo } from '@/lib/trust';
 
 /**
  * Índice llms.txt (/llms.txt) — especificación https://llmstxt.org
@@ -70,6 +71,16 @@ const secciones: { nombre: string; paginas: Pagina[] }[] = [
         titulo: 'Áreas de Especialización',
         descripcion: 'Ejes estratégicos que integran bienestar, legalidad y tecnología.',
       },
+      // Solo se lista cuando la página de equipo existe (hay datos reales).
+      ...(equipo.length > 0
+        ? [
+            {
+              ruta: '/empresa/equipo',
+              titulo: 'Equipo',
+              descripcion: 'Personas y perfiles profesionales del equipo de BOSS Asesorías.',
+            },
+          ]
+        : []),
     ],
   },
 ];

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/blog-posts';
+import { equipo } from '@/lib/trust';
 
 const BASE_URL = 'https://www.bossasesorias.cl';
 
@@ -24,6 +25,8 @@ const LAST_MODIFIED: Record<string, string> = {
   '/soluciones/capacitaciones': '2026-11-10',
   '/empresa/por-que-boss': '2026-11-10',
   '/empresa/areas': '2026-11-10',
+  // Solo se usa cuando hay equipo real: con el arreglo vacío la ruta no existe.
+  '/empresa/equipo': '2026-11-10',
   '/contacto': '2026-11-10',
 };
 
@@ -56,6 +59,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/soluciones/capacitaciones',
     '/empresa/por-que-boss',
     '/empresa/areas',
+    // La página de equipo se publica solo cuando hay datos reales.
+    ...(equipo.length > 0 ? ['/empresa/equipo'] : []),
     '/contacto',
     '/blog/ley-40-horas',
     '/blog/ley-karin',
