@@ -44,9 +44,16 @@ const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
+  // forceMount deja el contenido en el HTML aunque el acordeón esté cerrado:
+  // los rastreadores de IA (GPTBot, ClaudeBot, PerplexityBot) no ejecutan JS
+  // ni pulsan el acordeón, así que sin esto las respuestas solo existían en el
+  // JSON-LD. Radix monta el contenido pero lo deja visible, de ahí el hidden
+  // por estado; cerrado queda con display:none, invisible y fuera del árbol de
+  // accesibilidad, igual que antes para el visitante.
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    forceMount
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down data-[state=closed]:hidden"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>

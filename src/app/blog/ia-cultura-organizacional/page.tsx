@@ -5,6 +5,9 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { Calendar, User, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { absoluteUrl, jsonLdHtml, organizationRef } from '@/lib/schema';
+import { getArticleDates } from '@/lib/blog-posts';
+import { authorNode, getAuthor } from '@/lib/authors';
 
 export const metadata: Metadata = {
   title: 'IA y Cultura Organizacional en la Empresa',
@@ -19,7 +22,29 @@ export const metadata: Metadata = {
     type: 'article',
     publishedTime: '2026-08-15T10:00:00Z',
     authors: ['BOSS Asesorías'],
-    images: ['/images/news-ia-cultura.webp'],
+    // Recorte 1200×630 desde la imagen cuadrada de la cabecera: evita el
+    // recorte automático de las tarjetas sociales, que cortaba cabezas.
+    images: [
+      {
+        url: '/images/og/news-ia-cultura.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Inteligencia artificial aplicada a la cultura organizacional',
+      },
+    ],
+  },
+  // Sin este bloque la tarjeta social heredaba el título, la descripción y la
+  // imagen genéricos de la portada en vez de los del artículo.
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IA y Cultura Organizacional: Cómo Transformar tu Empresa',
+    description: 'Guía práctica para integrar IA en la cultura de tu empresa y potenciar el talento humano.',
+    images: [
+      {
+        url: '/images/og/news-ia-cultura.jpg',
+        alt: 'Inteligencia artificial aplicada a la cultura organizacional',
+      },
+    ],
   },
 };
 
@@ -66,23 +91,10 @@ const articleJsonLd = {
   '@type': 'Article',
   headline: 'IA y Cultura Organizacional: Cómo la Inteligencia Artificial Transforma el Trabajo',
   description: 'Cómo integrar inteligencia artificial en la cultura organizacional.',
-  image: '/images/news-ia-cultura.webp',
-  datePublished: '2026-08-15T10:00:00Z',
-  dateModified: '2026-08-15T10:00:00Z',
-  author: {
-    '@type': 'Organization',
-    name: 'BOSS Asesorías',
-    url: 'https://www.bossasesorias.cl',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'BOSS Asesorías',
-    url: 'https://www.bossasesorias.cl',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://www.bossasesorias.cl/images/logo_boss.webp',
-    },
-  },
+  image: absoluteUrl('/images/news-ia-cultura.webp'),
+  ...getArticleDates('ia-cultura-organizacional'),
+  author: authorNode(getAuthor('ia-cultura-organizacional')),
+  publisher: organizationRef,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': 'https://www.bossasesorias.cl/blog/ia-cultura-organizacional',
@@ -93,8 +105,8 @@ const articleJsonLd = {
 export default function IaCulturaPage() {
   return (
     <>
-      <script id="article-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <script id="faq-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script id="article-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(articleJsonLd) }} />
+      <script id="faq-ia-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqJsonLd) }} />
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

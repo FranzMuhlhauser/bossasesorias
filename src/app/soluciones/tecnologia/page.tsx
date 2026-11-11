@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Tecnología para Empresas: Web, IA y Soporte',
   description: 'Impulsa tu empresa con desarrollo web, aplicaciones, IA, soporte técnico y recuperación de datos.',
@@ -60,11 +61,7 @@ export default function TecnologiaPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Soluciones Tecnológicas Empresariales",
-    "provider": {
-      "@type": "Organization",
-      "name": "BOSS Asesorías",
-      "url": "https://www.bossasesorias.cl"
-    },
+    "provider": organizationRef,
     "areaServed": {
       "@type": "Country",
       "name": "Chile"
@@ -120,9 +117,9 @@ export default function TecnologiaPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
-      <script id="faq-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqTecnologiaJsonLd) }} />
+      <script id="service-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(serviceJsonLd) }} />
+      <script id="howto-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(howToJsonLd) }} />
+      <script id="faq-ld-tecnologia" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqTecnologiaJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/areatecnologica.webp"

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ArrowLeft } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Cultura y Desarrollo Organizacional',
   description: 'Fortalece el ADN de tu empresa con diagnósticos de clima, gestión del cambio, liderazgo y desarrollo organizacional.',
@@ -55,11 +56,7 @@ export default function CulturaPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Cultura y Desarrollo Organizacional",
-    "provider": {
-      "@type": "Organization",
-      "name": "BOSS Asesorías",
-      "url": "https://www.bossasesorias.cl"
-    },
+    "provider": organizationRef,
     "areaServed": {
       "@type": "Country",
       "name": "Chile"
@@ -84,8 +81,8 @@ export default function CulturaPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <script id="service-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
-      <script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
+      <script id="service-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(serviceJsonLd) }} />
+      <script id="howto-ld-cultura" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(howToJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/curso-capacitacion-tecnologia-digital.webp"

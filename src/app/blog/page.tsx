@@ -6,6 +6,7 @@ import { Calendar, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { blogPostsWithImage } from '@/lib/blog-posts';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
 
 /**
  * ÍNDICE DEL BLOG.
@@ -46,11 +47,7 @@ export default function BlogIndexPage() {
       'Normativa laboral, prevención de riesgos, tecnología y cultura organizacional para empresas chilenas.',
     url: 'https://www.bossasesorias.cl/blog',
     inLanguage: 'es-CL',
-    publisher: {
-      '@type': 'Organization',
-      name: 'BOSS Asesorías',
-      url: 'https://www.bossasesorias.cl',
-    },
+    publisher: organizationRef,
     blogPost: blogPostsWithImage.map((post) => ({
       '@type': 'BlogPosting',
       headline: post.title,
@@ -76,12 +73,12 @@ export default function BlogIndexPage() {
       <script
         id="blog-index-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(blogJsonLd) }}
       />
       <script
         id="blog-itemlist-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(itemListJsonLd) }}
       />
 
       {/* Cabecera */}

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ContactForm } from '@/components/contact-form';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
+import { jsonLdHtml } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Contacto | Asesoría en Viña del Mar',
   description: 'Contáctanos para una asesoría estratégica inicial. Nuestro equipo de consultores en Chile está listo para ayudarte con soluciones en bienestar laboral, gestión legal y tecnología.',
@@ -19,87 +20,6 @@ const breadcrumbItems = [
 ];
 
 export default function ContactPage() {
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "BOSS Asesorías",
-    "image": "https://www.bossasesorias.cl/images/logo_boss.webp",
-    "@id": "https://www.bossasesorias.cl",
-    "url": "https://www.bossasesorias.cl",
-    "telephone": "+56992895726",
-    "email": "contacto@bossasesorias.cl",
-    "description": "Consultoría integral en bienestar laboral, gestión legal y soluciones tecnológicas para empresas en Chile.",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "13 Norte 853, Of. 803",
-      "addressLocality": "Viña del Mar",
-      "addressRegion": "Valparaíso",
-      "postalCode": "2520000",
-      "addressCountry": "CL"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -33.016335,
-      "longitude": -71.547165
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Chile"
-    },
-    "sameAs": [
-      "https://www.facebook.com/BossAsesorias",
-      "https://www.instagram.com/boss_asesorias/",
-      "https://www.linkedin.com/in/boss-asesorias-8b9786118/"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de Consultoría Empresarial",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Bienestar Laboral y Seguridad Ocupacional"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Gestión Legal y Administrativa"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Soluciones Tecnológicas"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Cultura y Desarrollo Organizacional"
-          }
-        }
-      ]
-    }
-  };
-
   const faqsContact = [
     {
       question: '¿Cuánto tiempo tarda el primer diagnóstico?',
@@ -131,15 +51,12 @@ export default function ContactPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <script
-        id="local-business-json-ld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-      />
+      {/* La empresa ya se declara una sola vez en el @graph del layout; aquí
+          solo queda lo propio de esta página. */}
       <script
         id="contact-faq-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqContactJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqContactJsonLd) }}
       />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image

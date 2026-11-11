@@ -9,6 +9,8 @@ import './globals.css';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { HOME_TITLE } from '@/lib/site';
+import { getSiteGraph, jsonLdHtml } from '@/lib/schema';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,7 +38,6 @@ export const metadata: Metadata = {
     template: '%s | BOSS',
   },
   description: 'Transforma tu empresa con asesoría experta en bienestar laboral, gestión legal y tecnología. Solicita una asesoría estratégica y potencia tu crecimiento en Chile.',
-  keywords: ['bienestar laboral chile', 'asesorías empresariales integrales', 'prevención de riesgos chile', 'soluciones tecnológicas empresas', 'gestión legal y administrativa', 'consultora empresarial chile', 'asesoría estratégica personalizada'],
   alternates: {
     canonical: '/',
     // Avisa de que existe el feed del blog.
@@ -45,31 +46,32 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'BOSS Asesorías | Bienestar Laboral, Gestión Legal y Soluciones Tecnológicas',
+    // Mismo mensaje que el <title> de la portada: los metadatos del layout son
+    // los que hereda la home en og/twitter.
+    title: HOME_TITLE,
     description: 'Soluciones integrales que protegen a tu equipo, optimizan tus procesos y fortalecen tu organización.',
     siteName: 'BOSS ASESORÍAS',
     locale: 'es_CL',
     type: 'website',
     url: 'https://www.bossasesorias.cl',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'BOSS Asesorías - Bienestar Laboral, Gestión Legal y Tecnología en Chile',
-      },
-    ],
+    // La imagen se declara con los archivos de convención
+    // src/app/opengraph-image.png (+ .alt.txt) para que Next la sirva con
+    // hash de contenido y URL absoluta a partir de metadataBase. No la
+    // dupliques aquí: las dos declaraciones entran en conflicto.
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BOSS Asesorías | Soluciones Integrales para Empresas en Chile',
+    title: HOME_TITLE,
     description: 'Bienestar laboral, gestión legal y tecnología para potenciar tu empresa en Chile.',
-    images: ['/twitter-image.png'],
-  },    icons: {
+    // Igual que en openGraph: la imagen sale de src/app/twitter-image.png.
+  },
+  icons: {
+    // /favicon.ico ya lo inyecta Next desde src/app/favicon.ico (ICO real de
+    // 16, 32 y 48 px); declararlo aquí lo duplicaba en el <head>.
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/images/logo_boss.webp', sizes: 'any', type: 'image/webp' },
+      // 150×150 reales: declararlo «any» engañaba al navegador.
+      { url: '/images/logo_boss.webp', sizes: '150x150', type: 'image/webp' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -93,29 +95,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "BOSS Asesorías",
-    "url": "https://www.bossasesorias.cl",
-    "logo": "https://www.bossasesorias.cl/images/logo_boss.webp",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+56-9-9289-5726",
-      "contactType": "customer service",
-      "areaServed": "CL",
-      "availableLanguage": "Spanish"
-    },
-    "sameAs": [
-      "https://www.facebook.com/BossAsesorias",
-      "https://www.instagram.com/boss_asesorias/",
-      "https://www.linkedin.com/in/boss-asesorias-8b9786118/"
-    ]
-  };
+  // Grafo de marca (empresa + sitio), inyectado una sola vez para todo el sitio.
+  const siteGraph = getSiteGraph();
 
   return (
-    <html lang="es" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
+    <html lang="es-CL" className={cn(inter.variable, ibmPlexSans.variable)} suppressHydrationWarning>
       <head>
         {GTM_ID && (
           <Script
@@ -131,9 +115,9 @@ export default function RootLayout({
           />
         )}
         <script
-          id="json-ld-org"
+          id="site-json-ld"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(siteGraph) }}
         />
       </head>
       <body className="antialiased font-body">

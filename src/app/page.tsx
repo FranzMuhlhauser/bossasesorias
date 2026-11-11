@@ -8,10 +8,17 @@ import Link from 'next/link';
 import { ContactForm } from '@/components/contact-form';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { StatsCounter } from '@/components/stats-counter';
+import { CaseStudiesSection, TestimonialsSection } from '@/components/trust-sections';
 import { homeNewsWithImage } from '@/lib/home-news';
+import { HOME_DESCRIPTION, HOME_TITLE } from '@/lib/site';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
+
 export const metadata: Metadata = {
-  title: 'BOSS Asesorías | Asesoría Laboral y Legal',
-  description: 'Potencia tu empresa con nuestras soluciones 360° en bienestar laboral, gestión legal, tecnología y cultura organizacional.',
+  // `absolute` desactiva la plantilla '%s | BOSS' del layout: sin ella el
+  // resultado era «BOSS Asesorías | Asesoría Laboral y Legal | BOSS», con la
+  // marca repetida.
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
 };
 
 const whyBossImage = PlaceHolderImages.find(p => p.id === 'why-boss');
@@ -143,14 +150,8 @@ export default function Home() {
         "description": item.summary,
         "url": `https://www.bossasesorias.cl${item.link}`,
         "image": `https://www.bossasesorias.cl${item.image?.imageUrl ?? ''}`,
-        "author": {
-          "@type": "Organization",
-          "name": "BOSS Asesorías"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "BOSS Asesorías"
-        },
+        "author": organizationRef,
+        "publisher": organizationRef,
         "inLanguage": "es-CL"
       }
     }))
@@ -161,12 +162,12 @@ export default function Home() {
       <script
         id="faq-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqJsonLd) }}
       />
       <script
         id="news-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(newsJsonLd) }}
       />
       {/* Hero Section */}
       <section id="inicio" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white">
@@ -302,6 +303,10 @@ export default function Home() {
           </Accordion>
         </div>
       </section>
+
+      {/* Señales de confianza: no renderizan nada mientras trust.ts esté vacío */}
+      <TestimonialsSection />
+      <CaseStudiesSection />
 
       {/* Cultura y Desarrollo Organizacional */}
       <section id="cultura" aria-labelledby="heading-cultura" className="py-20 md:py-28 bg-muted/30">

@@ -7,6 +7,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { HelpCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import type { Metadata } from 'next';
+import { jsonLdHtml, organizationRef } from '@/lib/schema';
+import { TeamSection } from '@/components/trust-sections';
 
 export const metadata: Metadata = {
   title: '¿Por qué BOSS Asesorías? Consultoría en Chile',
@@ -48,18 +50,8 @@ export default function PorqueBossPage() {
     "@type": "AboutPage",
     "name": "¿Por qué BOSS Asesorías?",
     "description": "BOSS Asesorías conecta bienestar laboral, gestión estratégica y tecnología para fortalecer organizaciones en Chile. Nuestro nombre representa Bienestar, Organización, Salud y Seguridad.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "BOSS Asesorías",
-      "url": "https://www.bossasesorias.cl",
-      "description": "Consultoría integral que integra Bienestar, Organización, Salud y Seguridad para empresas en Chile.",
-      "slogan": "Bienestar • Organización • Salud • Seguridad",
-      "foundingDate": "2019",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Chile"
-      }
-    }
+    // Slogan, foundingDate y descripción viven ahora en el nodo global.
+    "mainEntity": organizationRef
   };
 
   const faqsPorqueBoss = [
@@ -93,8 +85,8 @@ export default function PorqueBossPage() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }} />
-      <script id="faq-porque-boss-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPorqueBossJsonLd) }} />
+      <script id="about-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(aboutJsonLd) }} />
+      <script id="faq-porque-boss-json-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdHtml(faqPorqueBossJsonLd) }} />
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-white">
         <Image
           src="/images/area-industrial.webp"
@@ -149,6 +141,9 @@ export default function PorqueBossPage() {
           </div>
         </div>
       </section>
+
+      {/* No renderiza nada mientras no haya equipo real en src/lib/trust.ts */}
+      <TeamSection />
 
       {/* FAQ */}
       <section id="faq" aria-labelledby="heading-faq" className="py-20 md:py-28 bg-muted/30">
